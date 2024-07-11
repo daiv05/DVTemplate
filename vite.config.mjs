@@ -17,51 +17,49 @@ export default defineConfig({
     VueRouter(),
     Layouts(),
     Vue({
-      template: { transformAssetUrls }
+      template: {
+        transformAssetUrls
+        // compilerOptions: {
+        //   // treat all tags with a dash as custom elements
+        //   isCustomElement: (tag) => tag.startsWith("notifications"),
+        // },
+      }
     }),
     // https://github.com/vuetifyjs/vuetify-loader/tree/master/packages/vite-plugin#readme
     Vuetify({
       autoImport: true,
       styles: {
-        configFile: 'src/styles/settings.scss',
-      },
+        configFile: 'src/styles/settings.scss'
+      }
     }),
     Components(),
     Fonts({
       google: {
-        families: [{
-          name: 'Montserrat',
-          styles: 'wght@100;300;400;500;700;900',
-        }],
-      },
+        families: [
+          {
+            name: 'Montserrat',
+            styles: 'wght@100;300;400;500;700;900'
+          }
+        ]
+      }
     }),
     AutoImport({
-      imports: [
-        'vue',
-        'vue-router',
-      ],
+      imports: ['vue', 'vue-router'],
+      dirs: ['src/composables/*', 'src/services/*', 'src/stores/*'],
       eslintrc: {
-        enabled: true,
+        enabled: true
       },
-      vueTemplate: true,
-    }),
+      vueTemplate: true
+    })
   ],
   define: { 'process.env': {} },
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))
     },
-    extensions: [
-      '.js',
-      '.json',
-      '.jsx',
-      '.mjs',
-      '.ts',
-      '.tsx',
-      '.vue',
-    ],
+    extensions: ['.js', '.json', '.jsx', '.mjs', '.ts', '.tsx', '.vue']
   },
   server: {
-    port: 3000,
-  },
+    port: 3000
+  }
 })
