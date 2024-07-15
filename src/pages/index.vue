@@ -11,7 +11,6 @@
 const cats = ref([])
 const animals = ref([])
 const alertToast = inject('alertToast')
-const { setLoading } = useAppStore()
 const loadCats = async () => {
   const { data, error } = await catServices.getCatAllData()
   if (data) {
@@ -32,7 +31,7 @@ const loadAnimals = async () => {
     animals.value = data
     alertToast({
       title: 'Animals loaded',
-      text: 'Animals loaded successfully!'
+      text: 'Animals loaded successfully!',
     })
     console.log('Data: ', data)
   }

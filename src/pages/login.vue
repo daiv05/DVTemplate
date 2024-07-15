@@ -6,7 +6,7 @@
           <v-card>
             <v-card-title>Login</v-card-title>
             <v-card-text>
-              <v-form @submit.prevent="login">
+              <v-form @submit.prevent="loginLocal">
                 <v-text-field
                   v-model="email"
                   label="Correo Electrónico"
@@ -32,26 +32,26 @@
 
 <script setup>
 import { useAppStore } from '@/stores/app'
-import { useRouter } from 'vue-router'
+import { ref, inject } from 'vue'
+import { useAuthStore } from '@/stores/auth'
 
 const alertToast = inject('alertToast')
 const { setLoading: loader } = useAppStore()
-
-const router = useRouter()
+const { login } = useAuthStore()
 
 const email = ref('')
 const password = ref('')
 
-const login = () => {
-  console.log('Email: ', email.value)
-  console.log('Password: ', password.value)
-  alertToast({
-    title: 'Sesión iniciada',
-    text: 'Bienvenido!'
-  })
-  router.push({ name: 'home' }).catch((e) => {
-    console.log('Error: ', e)
-  })
+const loginLocal = () => {
+  if (!email.value || !password.value) {
+    alertToast({
+      title: 'Error',
+      text: 'Por favor, ingrese su correo electrónico y contraseña',
+      type: 'error'
+    })
+    return
+  }
+  login(email.value, password.value)
 }
 
 const tryLoader = () => {
