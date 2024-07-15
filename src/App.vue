@@ -1,7 +1,7 @@
 <template>
   <v-app>
     <v-main>
-      <notifications />
+      <notifications position="top center" />
       <AppLoader v-if="isLoading" />
       <RouterView v-slot="{ Component }">
         <template v-if="Component">

@@ -1,17 +1,16 @@
 import axios from 'axios'
 import { useAuthStore } from '@/stores/auth.js'
 import router from '../router'
-import { notify } from '@kyvg/vue3-notification'
+import alertToast from './notification'
 
 const _axios = axios.create({
-  baseURL: process.env.BASE_API_URL,
+  baseURL: import.meta.env.VITE_BASE_API_URL,
   timeout: 10000
 })
 
 _axios.interceptors.request.use(
   function (config) {
-    const auth = useAuthStore()
-    const token = auth.token ? auth.token : localStorage.getItem('token')
+    const { token } = useAuthStore()
 
     if (token) config.headers.Authorization = 'Bearer ' + token
 
@@ -25,61 +24,70 @@ _axios.interceptors.request.use(
 _axios.interceptors.response.use(
   (response) => response,
   async (error) => {
-    const auth = useAuthStore()
-    if (error?.response?.status >= 500) {
-      notify({
-        type: 'error',
-        text: 'Error en el servidor, por favor intenta más tarde'
-      })
-    }
-    if (error?.response?.status === 400) {
-      notify({
-        type: 'error',
-        text: 'Error en la petición, por favor revisa los datos'
-      })
-    }
-    if (error?.response?.status === 401) {
-      try {
-        const refreshToken = auth.refreshToken
-          ? auth.refreshToken
-          : localStorage.getItem('refreshToken')
-
-        const token = auth.token ? auth.token : localStorage.getItem('token')
-
-        const response = await axios.post(
-          process.env.BASE_API_URL + '/refresh',
-          {
-            refreshToken: refreshToken
-          },
-          {
-            headers: {
-              Authorization: 'Bearer ' + token
-            }
-          }
-        )
-        if (response.status === 200) {
-          const token_1 = response.data.token
-          const refreshToken_1 = response.data.refresh_token
-          localStorage.setItem('token', token_1)
-          localStorage.setItem('refreshToken', refreshToken_1)
-          auth.login(token_1, refreshToken_1)
-          error.response.config.headers['Authorization'] = 'Bearer ' + token_1
-          return axios(error.response.config)
-        }
-      } catch (error) {
-        notify({
+    const { token, refreshToken, setAuthData } = useAuthStore()
+    const { response, request, message } = error
+    if (response) {
+      console.error(response.data)
+      // console.error(response.status);
+      // console.error(response.headers);
+      if (response.status >= 500) {
+        alertToast({
           type: 'error',
-          text: 'Sesión expirada, por favor inicie sesión nuevamente'
+          text: response.data.message || 'Error en el servidor, por favor intenta más tarde'
         })
-        router.push('/login')
       }
-    }
-    if (error?.response?.status === 403) {
-      notify({
+      if (response.status === 400) {
+        alertToast({
+          type: 'error',
+          text: response.data.message || 'Error en la petición, por favor revisa los datos'
+        })
+      }
+      if (response.status === 401) {
+        try {
+          const responseRefresh = await axios.post(
+            import.meta.env.BASE_API_URL + '/refresh',
+            {
+              refreshToken: refreshToken
+            },
+            {
+              headers: {
+                Authorization: 'Bearer ' + token
+              }
+            }
+          )
+          if (response.status === 200) {
+            const newToken = responseRefresh.data.token
+            setAuthData(newToken)
+            response.config.headers['Authorization'] = 'Bearer ' + newToken
+            return _axios(response.config)
+          }
+        } catch (error) {
+          router.push('/login')
+          alertToast({
+            type: 'error',
+            text: 'Sesión expirada, por favor inicie sesión nuevamente'
+          })
+        }
+      }
+      if (response.status === 403) {
+        router.push('/')
+        alertToast({
+          type: 'error',
+          text: response.data.message || 'No tienes permisos para realizar esta acción'
+        })
+      }
+    } else if (request) {
+      console.error(request)
+      alertToast({
         type: 'error',
-        text: 'No tienes permisos para realizar esta acción'
+        text: 'Tiempo de espera agotado, por favor intenta más tarde'
       })
-      router.push('/')
+    } else {
+      console.error(message)
+      alertToast({
+        type: 'error',
+        text: 'Ups! Ocurrió un error inesperado, por favor intenta más tarde'
+      })
     }
 
     return Promise.reject(error)

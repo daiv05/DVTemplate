@@ -35,7 +35,6 @@ router.beforeEach(async (to) => {
 
   if (authRequired && !auth.user) {
     auth.returnUrl = to.fullPath
-    console.log('return')
     return '/login'
   }
 })

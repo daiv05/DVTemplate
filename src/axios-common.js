@@ -30,7 +30,6 @@ export default async function axiosCommon(method = 'get', url = '', data = {}, h
       status = res.status
     })
     .catch((error) => {
-      console.error(error)
       if (error.response) {
         error = error.response.data
       } else if (error.request) {
