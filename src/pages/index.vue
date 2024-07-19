@@ -19,7 +19,6 @@ const loadCats = async () => {
       title: 'Cats loaded',
       text: 'Cats loaded successfully!'
     })
-    console.log('Data: ', data)
   }
   if (error) {
     console.log('Error: ', error)
@@ -31,14 +30,13 @@ const loadAnimals = async () => {
     animals.value = data
     alertToast({
       title: 'Animals loaded',
-      text: 'Animals loaded successfully!',
+      text: 'Animals loaded successfully!'
     })
-    console.log('Data: ', data)
   }
   if (error) {
     console.log('Error: ', error)
   }
 }
 
-await Promise.all([loadCats(), loadAnimals()])
+// await Promise.all([loadCats(), loadAnimals()])
 </script>

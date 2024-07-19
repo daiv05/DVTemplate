@@ -1,17 +1,9 @@
-/**
- * router/index.ts
- *
- * Automatic routes for `./src/pages/*.vue`
- */
-
-// Composables
-import { createRouter, createWebHistory } from 'vue-router/auto'
-import { setupLayouts } from 'virtual:generated-layouts'
+import { createRouter, createWebHistory } from 'vue-router'
 import { useAuthStore } from '@/stores/auth.js'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
-  extendRoutes: (routes) => [
+  routes: [
     {
       path: '/login',
       name: 'login',
@@ -19,13 +11,18 @@ const router = createRouter({
     },
     {
       path: '/',
-      name: 'home',
-      component: () => import('../pages/index.vue')
+      name: 'dashboard',
+      component: () => import('../layouts/dashboard.vue'),
+      children: [
+        {
+          path: '/',
+          name: 'home',
+          component: () => import('../pages/index.vue')
+        },
+      ]
     },
-    { path: '/:pathMatch(.*)*', redirect: '/' },
-    ...setupLayouts(routes)
-  ],
-  linkActiveClass: 'active'
+    { path: '/:pathMatch(.*)*', redirect: '/' }
+  ]
 })
 
 router.beforeEach(async (to) => {

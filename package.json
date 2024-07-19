@@ -15,8 +15,7 @@
     "axios": "^1.7.2",
     "core-js": "^3.34.0",
     "jwt-decode": "^4.0.0",
-    "luxon": "^3.4.4",
-    "roboto-fontface": "*",
+    "overlayscrollbars-vue": "^0.5.9",
     "vue": "^3.4.0",
     "vuetify": "^3.5.0"
   },

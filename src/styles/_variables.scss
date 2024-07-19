@@ -1,0 +1,28 @@
+// Global font size and border radius
+$font-size-root: 1rem;
+$border-radius-root: 12px;
+$body-font-family: 'Montserrat';
+$heading-font-family: $body-font-family;
+$typoOptions: text-h1, text-h2, text-h3, text-h4, text-h5, text-h6, text-subtitle-1, text-subtitle-2,
+  text-body-1, text-body-2, text-button, text-caption, text-overline;
+
+#app {
+  font-family: $body-font-family, sans-serif !important;
+  @each $typoOption in $typoOptions {
+    .#{$typoOption} {
+      font-family: $body-font-family, sans-serif !important;
+    }
+  }
+}
+$btn-font-weight: 400 !default;
+$btn-letter-spacing: 0 !default;
+
+// Custom Variables
+// colors
+$white: #fff !default;
+// cards
+$card-item-spacer-xy: 20px 24px !default;
+$card-text-spacer: 24px !default;
+$card-title-size: 18px !default;
+// Global Shadow
+$box-shadow: 1px 0 20px rgb(0 0 0 / 8%);

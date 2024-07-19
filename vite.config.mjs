@@ -1,7 +1,7 @@
 // Plugins
 import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
-import Fonts from 'unplugin-fonts/vite'
+import Unfonts from 'unplugin-fonts/vite'
 import Layouts from 'vite-plugin-vue-layouts'
 import Vue from '@vitejs/plugin-vue'
 import VueRouter from 'unplugin-vue-router/vite'
@@ -30,17 +30,21 @@ export default defineConfig({
       autoImport: true,
       styles: {
         configFile: 'src/styles/settings.scss'
-      }
+      },
     }),
     Components(),
-    Fonts({
-      google: {
+    Unfonts({
+      custom: {
         families: [
           {
             name: 'Montserrat',
-            styles: 'wght@100;300;400;500;700;900'
+            local: 'Montserrat',
+            styles: 'wght@100;300;400;500;700;900',
+            src: 'src/assets/fonts/Montserrat.otf'
           }
-        ]
+        ],
+        display: 'auto',
+        preload: true
       }
     }),
     AutoImport({
