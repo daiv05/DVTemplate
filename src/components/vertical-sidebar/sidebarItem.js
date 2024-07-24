@@ -1,62 +1,48 @@
 const sidebarItem = [
-  { header: 'Dashboard' },
   {
-    title: 'Default',
-    icon: 'mdi-monitor-dashboard',
+    title: 'Inicio',
+    icon: 'mdi-home-account',
     to: '/'
   },
   { divider: true },
-  { header: 'Pages' },
+  { header: 'Páginas' },
   {
-    title: 'Authentication',
+    title: 'Autenticación',
     icon: 'mdi-key-variant',
-    to: '/auth',
     children: [
       {
         title: 'Login',
         icon: 'mdi-circle',
         to: '/login'
-      },
-      {
-        title: 'Register',
-        icon: 'mdi-circle',
-        to: '/auth/register'
       }
     ]
   },
   {
     title: 'Error 404',
     icon: 'mdi-alert-circle',
-    to: '/pages/error'
+    to: '/404'
   },
   { divider: true },
-  { header: 'Utilities' },
+  { header: 'Utilidades' },
   {
-    title: 'Typography',
+    title: 'Temas y estilos',
+    icon: 'mdi-palette-swatch',
+    to: '/utils/colors'
+  },
+  {
+    title: 'Tipografía',
     icon: 'mdi-format-letter-case-lower',
     to: '/utils/typography'
   },
   {
-    title: 'Shadows',
-    icon: 'mdi-box-shadow',
-    to: '/utils/shadows'
-  },
-  {
-    title: 'Colors',
+    title: 'Colores',
     icon: 'mdi-palette',
     to: '/utils/colors'
   },
-
   {
-    title: 'Icons',
-    icon: 'mdi-emoticon-angry',
-    to: '/forms/radio',
+    title: 'Iconos',
+    icon: 'mdi-emoticon-happy-outline',
     children: [
-      {
-        title: 'Tabler Icons',
-        icon: 'mdi-circle',
-        to: '/icons/tabler'
-      },
       {
         title: 'Material Icons',
         icon: 'mdi-circle',
@@ -64,95 +50,66 @@ const sidebarItem = [
       }
     ]
   },
-  { divider: true },
   {
-    title: 'Sample Page',
-    icon: 'mdi-book-open',
-    to: '/starter'
-  },
-  {
-    title: 'Documentation',
-    icon: 'mdi-lightbulb-question',
-    to: 'https://codedthemes.gitbook.io/berry-vuetify/',
-    type: 'external'
-  },
-  { header: 'Dashboard' },
-  {
-    title: 'Default',
-    icon: 'mdi-monitor-dashboard',
-    to: '/dashboard/default'
+    title: 'Alertas',
+    icon: 'mdi-bell-alert-outline',
+    to: '/utils/colors'
   },
   { divider: true },
-  { header: 'Pages' },
+  { header: 'Plugins' },
   {
-    title: 'Authentication',
-    icon: 'mdi-key-variant',
-    to: '/auth',
-    children: [
-      {
-        title: 'Login',
-        icon: 'mdi-circle',
-        to: '/login'
-      },
-      {
-        title: 'Register',
-        icon: 'mdi-circle',
-        to: '/auth/register'
-      }
-    ]
-  },
-  {
-    title: 'Error 404',
-    icon: 'mdi-alert-circle',
-    to: '/pages/error'
-  },
-  { divider: true },
-  { header: 'Utilities' },
-  {
-    title: 'Typography',
-    icon: 'mdi-format-letter-case-lower',
+    title: 'Axios',
+    icon: 'mdi-link-edit',
     to: '/utils/typography'
   },
   {
-    title: 'Shadows',
-    icon: 'mdi-box-shadow',
-    to: '/utils/shadows'
+    title: 'date-fns',
+    icon: 'mdi-clipboard-text-clock',
+    to: '/utils/typography'
   },
   {
-    title: 'Colors',
-    icon: 'mdi-palette',
-    to: '/utils/colors'
+    title: 'unplugin',
+    icon: 'mdi-toy-brick-plus',
+    to: '/utils/typography'
   },
-
   {
-    title: 'Icons',
-    icon: 'mdi-emoticon-angry',
-    to: '/forms/radio',
+    title: 'VueUse',
+    icon: 'mdi-hand-coin',
+    to: '/utils/typography'
+  },
+  {
+    title: 'ESLint y Prettier',
+    icon: 'mdi-pretzel',
+    to: '/utils/typography'
+  },
+  { divider: true },
+  { header: 'Componentes' },
+  {
+    title: 'Vuetify Custom',
+    icon: 'mdi-folder-plus',
     children: [
       {
-        title: 'Tabler Icons',
+        title: 'Fecha y hora',
         icon: 'mdi-circle',
-        to: '/icons/tabler'
+        to: '/icons/material'
       },
       {
-        title: 'Material Icons',
+        title: 'Modales',
+        icon: 'mdi-circle',
+        to: '/icons/material'
+      },
+      {
+        title: 'Tablas',
+        icon: 'mdi-circle',
+        to: '/icons/material'
+      },
+      {
+        title: 'Paginación',
         icon: 'mdi-circle',
         to: '/icons/material'
       }
     ]
-  },
-  { divider: true },
-  {
-    title: 'Sample Page',
-    icon: 'mdi-book-open',
-    to: '/starter'
-  },
-  {
-    title: 'Documentation',
-    icon: 'mdi-lightbulb-question',
-    to: 'https://codedthemes.gitbook.io/berry-vuetify/',
-    type: 'external'
   }
-];
+]
 
-export default sidebarItem;
+export default sidebarItem

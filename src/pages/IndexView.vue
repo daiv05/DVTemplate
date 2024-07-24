@@ -1,7 +1,7 @@
 <template>
   <div>
     <span>CAAAATTTTSSSSS<br /><br /></span>
-    <span v-for="dat in cats">- {{ dat.text }} <br /><br /></span>
+    <span v-for="(dat, i) in cats" :key="i">- {{ dat.text }} <br /><br /></span>
     <span>ANIMAAAAALLSSSS<br /><br /></span>
     <span>- {{ animals.text }} <br /><br /></span>
   </div>

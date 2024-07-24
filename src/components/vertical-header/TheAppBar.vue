@@ -1,16 +1,6 @@
 <script setup>
-import NotificationDD from './partials/NotificationDD.vue'
-import ProfileDD from './partials/ProfileDD.vue'
-import Searchbar from './partials/SearchBarPanel.vue'
-
 import { useAppStore } from '@/stores/app'
 const { toggleDrawer, toggleMiniSidebar } = useAppStore()
-
-const showSearch = ref(false)
-
-function searchbox() {
-  showSearch.value = !showSearch.value
-}
 </script>
 
 <template>
@@ -21,8 +11,8 @@ function searchbox() {
       icon
       rounded="sm"
       variant="flat"
-      @click.stop="toggleMiniSidebar"
       size="small"
+      @click.stop="toggleMiniSidebar"
     >
       <v-icon size="20" stroke-width="1.5">mdi-menu</v-icon>
     </v-btn>
@@ -32,35 +22,15 @@ function searchbox() {
       icon
       rounded="sm"
       variant="flat"
-      @click.stop="toggleDrawer"
       size="small"
+      @click.stop="toggleDrawer"
     >
       <v-icon size="20" stroke-width="1.5">mdi-menu</v-icon>
     </v-btn>
 
-    <!-- search mobile -->
-    <v-btn
-      class="hidden-lg-and-up text-secondary ml-3"
-      color="lightsecondary"
-      icon
-      rounded="sm"
-      variant="flat"
-      size="small"
-      @click="searchbox"
-    >
-      <v-icon size="20" stroke-width="1.5">mdi-search-web</v-icon>
-    </v-btn>
-    <v-sheet v-if="showSearch" class="search-sheet v-col-12">
-      <Searchbar :closesearch="searchbox" />
-    </v-sheet>
-
-    <v-sheet class="mx-3 v-col-3 v-col-xl-2 v-col-lg-4 d-none d-lg-block">
-      <Searchbar />
-    </v-sheet>
-
     <v-spacer />
     <v-menu :close-on-content-click="false">
-      <template v-slot:activator="{ props }">
+      <template #activator="{ props }">
         <v-btn
           icon
           class="text-secondary mx-3"
@@ -73,13 +43,13 @@ function searchbox() {
           <v-icon stroke-width="1.5" size="22">mdi-bell-alert</v-icon>
         </v-btn>
       </template>
-      <v-sheet rounded="md" width="330" elevation="12">
-        <NotificationDD />
+      <v-sheet rounded="lg" width="330" elevation="12">
+        <notification-expand />
       </v-sheet>
     </v-menu>
 
     <v-menu :close-on-content-click="false">
-      <template v-slot:activator="{ props }">
+      <template #activator="{ props }">
         <v-btn
           class="profileBtn text-primary"
           color="lightprimary"
@@ -93,8 +63,8 @@ function searchbox() {
           <v-icon size="25" stroke-width="1.5">mdi-cog-outline</v-icon>
         </v-btn>
       </template>
-      <v-sheet rounded="md" width="330" elevation="12">
-        <ProfileDD />
+      <v-sheet rounded="lg" width="330" elevation="12">
+        <profile-expand />
       </v-sheet>
     </v-menu>
   </v-app-bar>

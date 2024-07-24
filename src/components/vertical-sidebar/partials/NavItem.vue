@@ -1,11 +1,19 @@
 <script setup>
-import Icon from './IconSet.vue';
+import Icon from './IconSet.vue'
 
-const props = defineProps({ item: Object, level: Number });
+const props = defineProps({
+  item: {
+    type: Object,
+    default: () => ({})
+  },
+  level: {
+    type: Number,
+    default: 0
+  }
+})
 </script>
 
 <template>
-  <!---Single Item-->
   <v-list-item
     :to="item.type === 'external' ? '' : item.to"
     :href="item.type === 'external' ? item.to : ''"
@@ -15,17 +23,14 @@ const props = defineProps({ item: Object, level: Number });
     :disabled="item.disabled"
     :target="item.type === 'external' ? '_blank' : ''"
   >
-    <!---If icon-->
-    <template v-slot:prepend>
+    <template #prepend>
       <Icon :item="props.item.icon" :level="props.level" />
     </template>
     <v-list-item-title>{{ item.title }}</v-list-item-title>
-    <!---If Caption-->
     <v-list-item-subtitle v-if="item.subCaption" class="text-caption mt-n1 hide-menu">
       {{ item.subCaption }}
     </v-list-item-subtitle>
-    <!---If any chip or label-->
-    <template v-slot:append v-if="item.chip">
+    <template v-if="item.chip" #append>
       <v-chip
         :color="item.chipColor"
         class="sidebarchip hide-menu"

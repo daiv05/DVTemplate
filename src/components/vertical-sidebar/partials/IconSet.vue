@@ -1,5 +1,14 @@
 <script setup>
-const props = defineProps({ item: String, level: Number })
+const props = defineProps({
+  item: {
+    type: String,
+    default: ''
+  },
+  level: {
+    type: Number,
+    default: 0
+  }
+})
 </script>
 
 <template>

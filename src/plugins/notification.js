@@ -4,7 +4,7 @@ const { notify } = useNotification()
 
 const alertToast = (config) => {
   notify({
-    ...config,
+    ...config
   })
 }
 

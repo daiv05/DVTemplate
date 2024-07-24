@@ -1,3 +1,6 @@
+.v-navigation-drawer__scrim.fade-transition-leave-to {
+  display: none;
+}
 /*This is for the logo*/
 .leftSidebar {
   border: 0px;
@@ -21,6 +24,7 @@
   .v-list-group__items .v-list-item,
   .v-list-item {
     border-radius: $border-radius-root;
+    color: rgb(var(--v-theme-lightText));
     padding-inline-start: calc(12px + var(--indent-padding) / 2) !important;
     &:hover {
       color: rgb(var(--v-theme-secondary));

@@ -23,7 +23,7 @@ export const useAuthStore = defineStore('auth', () => {
     }
     token.value = 'fakeToken'
     refreshToken.value = 'fakeRefreshToken'
-    router.push({ name: 'home' })
+    router.push({ name: 'inicio' })
     setLoading(false)
     alertToast({
       title: 'Login',

@@ -7,21 +7,25 @@ const router = createRouter({
     {
       path: '/login',
       name: 'login',
-      component: () => import('../pages/login.vue')
+      component: () => import('../pages/LoginView.vue')
     },
     {
       path: '/',
       name: 'dashboard',
-      component: () => import('../layouts/dashboard.vue'),
+      component: () => import('../layouts/DashboardLayout.vue'),
       children: [
         {
           path: '/',
-          name: 'home',
-          component: () => import('../pages/index.vue')
-        },
+          name: 'inicio',
+          component: () => import('../pages/template-example/WelcomePage.vue')
+        }
       ]
     },
-    { path: '/:pathMatch(.*)*', redirect: '/' }
+    {
+      path: '/:pathMatch(.*)*',
+      name: 'not-found',
+      component: () => import('../pages/NotFound.vue')
+    }
   ]
 })
 

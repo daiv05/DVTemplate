@@ -13,7 +13,7 @@ import axios from '@/plugins/axios'
 import Notifications from '@kyvg/vue3-notification'
 
 import 'unfonts.css'
-import 'overlayscrollbars/overlayscrollbars.css';
+import 'overlayscrollbars/overlayscrollbars.css'
 
 export function registerPlugins(app) {
   app

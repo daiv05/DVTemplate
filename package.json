@@ -1,44 +1,39 @@
 {
   "name": "dvtemplate",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "lint": "eslint . --fix --ignore-path .gitignore",
+    "lint": "eslint . --fix",
     "format": "prettier .  --write"
   },
   "dependencies": {
     "@kyvg/vue3-notification": "^3.2.1",
-    "@mdi/font": "7.0.96",
+    "@mdi/font": "7.4.47",
     "@vueuse/core": "^10.11.0",
     "axios": "^1.7.2",
     "core-js": "^3.34.0",
     "jwt-decode": "^4.0.0",
+    "luxon": "^3.4.4",
     "overlayscrollbars-vue": "^0.5.9",
-    "vue": "^3.4.0",
-    "vuetify": "^3.5.0"
+    "vue": "^3.4.33",
+    "vuetify": "^3.6.0"
   },
   "devDependencies": {
-    "@vitejs/plugin-vue": "^5.0.4",
-    "eslint": "^8.57.0",
+    "@vitejs/plugin-vue": "^5.1.0",
+    "eslint": "^9.7.0",
     "eslint-config-prettier": "^9.1.0",
-    "eslint-config-standard": "^17.1.0",
-    "eslint-plugin-import": "^2.29.1",
-    "eslint-plugin-n": "^16.6.2",
-    "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-promise": "^6.1.1",
-    "eslint-plugin-vue": "^9.22.0",
+    "eslint-plugin-promise": "^6.6.0",
+    "eslint-plugin-vue": "^9.27.0",
     "pinia": "^2.1.7",
-    "prettier": "3.3.2",
-    "sass": "^1.71.1",
-    "unplugin-auto-import": "^0.17.5",
+    "prettier": "3.3.3",
+    "sass": "^1.53.0",
+    "unplugin-auto-import": "^0.18.1",
     "unplugin-fonts": "^1.1.1",
-    "unplugin-vue-components": "^0.26.0",
-    "unplugin-vue-router": "^0.8.4",
-    "vite": "^5.1.5",
-    "vite-plugin-vue-layouts": "^0.11.0",
+    "unplugin-vue-components": "^0.27.3",
+    "vite": "^5.3.4",
     "vite-plugin-vuetify": "^2.0.3",
-    "vue-router": "^4.3.0"
+    "vue-router": "^4.4.0"
   }
 }

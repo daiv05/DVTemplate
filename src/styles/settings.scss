@@ -1,7 +1,3 @@
-@forward 'vuetify/settings' with (
-  $color-pack: false,
-  $layers: true,
-);
 @import './variables';
 @import './override';
 @import './container';

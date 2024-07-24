@@ -1,7 +1,7 @@
 <template>
   <v-navigation-drawer
-    left
     v-model="drawer"
+    left
     elevation="0"
     rail-width="75"
     mobile-breakpoint="lg"
@@ -11,7 +11,7 @@
     expand-on-hover
   >
     <div class="pa-5">
-      <Logo />
+      <LogoNav />
     </div>
     <OverlayScrollbarsComponent
       element="span"
@@ -21,10 +21,10 @@
       <div class="scrollnavbar">
         <v-list class="pa-4">
           <template v-for="(item, i) in sidebarMenu" :key="i">
-            <NavGroup :item="item" v-if="item.header" :key="item.title" />
-            <v-divider class="my-3" v-else-if="item.divider" />
-            <NavCollapse class="leftPadding" :item="item" :level="0" v-else-if="item.children" />
-            <NavItem :item="item" v-else class="leftPadding" />
+            <NavGroup v-if="item.header" :key="item.title" :item="item" />
+            <v-divider v-else-if="item.divider" class="my-3" />
+            <NavCollapse v-else-if="item.children" class="leftPadding" :item="item" :level="0" />
+            <NavItem v-else :item="item" class="leftPadding" />
           </template>
         </v-list>
       </div>
@@ -36,17 +36,10 @@
 import { useAppStore } from '@/stores/app'
 import { storeToRefs } from 'pinia'
 import sidebarItems from './sidebarItem'
-import { onMounted } from 'vue'
 import { OverlayScrollbarsComponent } from 'overlayscrollbars-vue'
 
 const { drawer, miniSidebar } = storeToRefs(useAppStore())
 const sidebarMenu = shallowRef(sidebarItems)
-
-onMounted(() => {
-  // const drawerContainer = document.querySelector('#leftDrawer')
-  // const ps = new PerfectScrollbar(drawerContainer)
-  // ps.update()
-})
 </script>
 
 <style></style>

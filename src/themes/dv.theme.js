@@ -1,5 +1,5 @@
-const DVTheme = {
-  name: 'DVTheme',
+const DVLightTheme = {
+  name: 'DVLightTheme',
   dark: false,
   variables: {
     'border-color': '#1e88e5',
@@ -7,7 +7,7 @@ const DVTheme = {
   },
   colors: {
     primary: '#1e88e5',
-    secondary: '#5e35b1',
+    secondary: '#353DB1',
     info: '#03c9d7',
     success: '#00c853',
     accent: '#FFAB91',
@@ -18,10 +18,7 @@ const DVTheme = {
     lightsuccess: '#b9f6ca',
     lighterror: '#f9d8d8',
     lightwarning: '#fff8e1',
-    darkText: '#212121',
     lightText: '#616161',
-    darkprimary: '#1565c0',
-    darksecondary: '#4527a0',
     borderLight: '#d0d0d0',
     inputBorder: '#787878',
     containerBg: '#eef2f6',
@@ -31,6 +28,38 @@ const DVTheme = {
     primary200: '#90caf9',
     secondary200: '#b39ddb'
   }
-};
+}
 
-export { DVTheme };
+const DVDarkTheme = {
+  name: 'DVDarkTheme',
+  dark: true,
+  variables: {
+    'border-color': '#1e88e5',
+    'carousel-control-size': 10
+  },
+  colors: {
+    primary: '#3E7EB7',
+    secondary: '#C7CCD1',
+    info: '#30B2BB',
+    success: '#00c853',
+    accent: '#FFAB91',
+    warning: '#ffc107',
+    error: '#f44336',
+    lightprimary: '#BAADCC',
+    lightsecondary: '#52456A',
+    lightsuccess: '#57B07E',
+    lighterror: '#A64949',
+    lightwarning: '#E5B663',
+    lightText: '#616161',
+    borderLight: '#d0d0d0',
+    inputBorder: '#787878',
+    containerBg: '#3C3D3E',
+    surface: '#0D0D0D',
+    'on-surface-variant': '#0D0D0D',
+    gray100: '#fafafa',
+    primary200: '#90caf9',
+    secondary200: '#b39ddb',
+  }
+}
+
+export { DVLightTheme, DVDarkTheme }
