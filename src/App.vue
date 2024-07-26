@@ -27,8 +27,6 @@ watch(darkMode, () => {
 })
 
 const toggleTheme = async () => {
-  darkMode.value
-    ? (theme.value = 'DVDarkTheme')
-    : (theme.value = 'DVLightTheme')
+  darkMode.value ? (theme.value = 'DVDarkTheme') : (theme.value = 'DVLightTheme')
 }
 </script>

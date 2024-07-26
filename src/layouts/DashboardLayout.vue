@@ -31,7 +31,6 @@ import { useAppStore } from '@/stores/app'
 import { storeToRefs } from 'pinia'
 
 const { miniSidebar } = storeToRefs(useAppStore())
-
 </script>
 
 <style></style>

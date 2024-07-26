@@ -58,7 +58,7 @@ const DVDarkTheme = {
     'on-surface-variant': '#0D0D0D',
     gray100: '#fafafa',
     primary200: '#90caf9',
-    secondary200: '#b39ddb',
+    secondary200: '#b39ddb'
   }
 }
 

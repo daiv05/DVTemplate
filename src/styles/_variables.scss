@@ -94,10 +94,7 @@ $new-typography: (
   )
 );
 
-@use 'vuetify/settings' with (
-  $typography: $new-typography,
-  // $rounded: $new-rounded
-);
+@use 'vuetify/settings' with ($typography: $new-typography);
 
 html,
 body,

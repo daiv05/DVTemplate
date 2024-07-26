@@ -2,7 +2,7 @@
   <v-container>
     <v-row>
       <v-col cols="12">
-        <v-card>
+        <v-card class="my-4">
           <v-card-title>
             <h3>
               DV Template
@@ -11,11 +11,39 @@
           </v-card-title>
           <v-card-text>
             <p></p>
-            <p>This page is located at <code>src/pages/template-example/welcome.vue</code>.</p>
             <p>
-              You can use this page to create new pages in your application. You can also use this
-              page to create new pages in your application.
+              Esta plantilla es un punto de partida para el desarrollo de aplicaciones web con
+              Vue.js y Vuetify.
             </p>
+            <p>
+              La plantilla incluye un conjunto de componentes, estilos, plugins y utilidades que
+              facilitan el desarrollo de aplicaciones web.
+            </p>
+          </v-card-text>
+        </v-card>
+        <v-card class="my-4">
+          <v-card-title>
+            <h4 class="mt-2">Versiones</h4>
+          </v-card-title>
+          <v-card-text>
+            <v-list variant="flat">
+              <v-list-item>
+                <v-icon size="5">mdi-circle</v-icon>
+                <strong class="ml-2">Vue.js:</strong> 3.4.33
+              </v-list-item>
+              <v-list-item>
+                <v-icon size="5">mdi-circle</v-icon>
+                <strong class="ml-2">Vuetify:</strong> 3.6.0
+              </v-list-item>
+              <v-list-item>
+                <v-icon size="5">mdi-circle</v-icon>
+                <strong class="ml-2">Vue Router:</strong> 4.4.0
+              </v-list-item>
+              <v-list-item>
+                <v-icon size="5">mdi-circle</v-icon>
+                <strong class="ml-2">Vite:</strong> 5.3.4
+              </v-list-item>
+            </v-list>
           </v-card-text>
         </v-card>
       </v-col>

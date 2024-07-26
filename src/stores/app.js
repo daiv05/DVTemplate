@@ -28,6 +28,6 @@ export const useAppStore = defineStore('app', () => {
     toggleDrawer,
     miniSidebar,
     toggleMiniSidebar,
-    darkMode,
+    darkMode
   }
 })

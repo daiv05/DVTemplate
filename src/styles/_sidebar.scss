@@ -1,6 +1,9 @@
 .v-navigation-drawer__scrim.fade-transition-leave-to {
   display: none;
 }
+.v-navigation-drawer--left {
+  border-right-width: 0 !important;
+}
 /*This is for the logo*/
 .leftSidebar {
   border: 0px;
