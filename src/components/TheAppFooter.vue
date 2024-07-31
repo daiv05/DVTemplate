@@ -1,6 +1,6 @@
 <template>
   <v-footer class="footer d-flex flex-column justify-center text-center align-center">
-    <div>
+    <div class="my-1">
       <a
         href="https://github.com/daiv05/musycharts-dcdv"
         target="_blank"
@@ -16,7 +16,7 @@
         <img src="@/assets/icons/brand-gmail.svg" alt="Gmail" class="icon-footer" />
       </a>
     </div>
-    <div class="text-center">
+    <div class="text-center mb-2">
       <p class="text-grey-darken-1">&copy; 2024 DVTemplate. Todos los derechos reservados.</p>
     </div>
   </v-footer>
@@ -32,7 +32,7 @@
 }
 
 .icon-footer {
-  width: 15px;
-  height: 15px;
+  width: 20px;
+  height: 20px;
 }
 </style>

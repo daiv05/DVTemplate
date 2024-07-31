@@ -2,7 +2,7 @@ const sidebarItem = [
   {
     title: 'Inicio',
     icon: 'mdi-home-account',
-    to: '/'
+    to: '/inicio'
   },
   { divider: true },
   { header: 'Páginas' },
@@ -27,17 +27,17 @@ const sidebarItem = [
   {
     title: 'Temas y estilos',
     icon: 'mdi-palette-swatch',
-    to: '/utils/colors'
+    to: '/utilidades/temas-y-estilos'
   },
   {
     title: 'Tipografía',
     icon: 'mdi-format-letter-case-lower',
-    to: '/utils/typography'
+    to: '/utilidades/tipografia'
   },
   {
     title: 'Colores',
     icon: 'mdi-palette',
-    to: '/utils/colors'
+    to: '/utilidades/colores'
   },
   {
     title: 'Iconos',
@@ -46,41 +46,41 @@ const sidebarItem = [
       {
         title: 'Material Icons',
         icon: 'mdi-circle',
-        to: '/icons/material'
+        to: '/utilidades/iconos/material'
       }
     ]
   },
   {
     title: 'Alertas',
     icon: 'mdi-bell-alert-outline',
-    to: '/utils/colors'
+    to: '/utilidades/alertas'
   },
   { divider: true },
   { header: 'Plugins' },
   {
     title: 'Axios',
     icon: 'mdi-link-edit',
-    to: '/utils/typography'
+    to: '/plugins/axios'
   },
   {
     title: 'date-fns',
     icon: 'mdi-clipboard-text-clock',
-    to: '/utils/typography'
+    to: '/plugins/date-fns'
   },
   {
     title: 'unplugin',
     icon: 'mdi-toy-brick-plus',
-    to: '/utils/typography'
+    to: '/plugins/unplugin'
   },
   {
     title: 'VueUse',
     icon: 'mdi-hand-coin',
-    to: '/utils/typography'
+    to: '/plugins/vueuse'
   },
   {
     title: 'ESLint y Prettier',
     icon: 'mdi-pretzel',
-    to: '/utils/typography'
+    to: '/plugins/eslint-prettier'
   },
   { divider: true },
   { header: 'Componentes' },
@@ -91,22 +91,22 @@ const sidebarItem = [
       {
         title: 'Fecha y hora',
         icon: 'mdi-circle',
-        to: '/icons/material'
+        to: '/componentes/fecha-y-hora'
       },
       {
         title: 'Modales',
         icon: 'mdi-circle',
-        to: '/icons/material'
+        to: '/componentes/modales'
       },
       {
         title: 'Tablas',
         icon: 'mdi-circle',
-        to: '/icons/material'
+        to: '/componentes/tablas'
       },
       {
         title: 'Paginación',
         icon: 'mdi-circle',
-        to: '/icons/material'
+        to: '/componentes/paginacion'
       }
     ]
   }

@@ -1,29 +1,31 @@
 <template>
-  <v-app :class="[miniSidebar ? 'mini-sidebar' : '']">
-    <the-app-drawer />
-    <the-app-bar />
-    <v-main class="containerBg">
-      <v-container fluid class="page-wrapper">
-        <RouterView v-slot="{ Component }">
-          <template v-if="Component">
-            <Transition mode="out-in">
-              <KeepAlive>
-                <Suspense>
-                  <!-- main content -->
-                  <component :is="Component"></component>
-                  <!-- loading state -->
-                  <template #fallback>
-                    <AppLoader />
-                  </template>
-                </Suspense>
-              </KeepAlive>
-            </Transition>
-          </template>
-        </RouterView>
-      </v-container>
-      <the-app-footer />
-    </v-main>
-  </v-app>
+  <v-locale-provider>
+    <v-app :class="[miniSidebar ? 'mini-sidebar' : '']">
+      <TheAppDrawer style="position: fixed" />
+      <TheAppBar />
+      <v-main style="--v-layout-top: 0px">
+        <v-container fluid class="page-wrapper">
+          <RouterView v-slot="{ Component }">
+            <template v-if="Component">
+              <Transition mode="out-in">
+                <KeepAlive>
+                  <Suspense>
+                    <!-- main content -->
+                    <component :is="Component"></component>
+                    <!-- loading state -->
+                    <template #fallback>
+                      <AppLoader />
+                    </template>
+                  </Suspense>
+                </KeepAlive>
+              </Transition>
+            </template>
+          </RouterView>
+        </v-container>
+        <TheAppFooter />
+      </v-main>
+    </v-app>
+  </v-locale-provider>
 </template>
 
 <script setup>
@@ -33,4 +35,4 @@ import { storeToRefs } from 'pinia'
 const { miniSidebar } = storeToRefs(useAppStore())
 </script>
 
-<style></style>
+<style scoped lang="scss"></style>

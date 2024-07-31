@@ -28,13 +28,16 @@ export default defineConfig({
     }),
     Components(),
     Unfonts({
-      custom: {
+      fontsource: {
         families: [
+          'Montserrat Variable',
           {
             name: 'Montserrat',
-            local: 'Montserrat',
-            styles: 'wght@100;300;400;500;700;900',
-            src: 'src/assets/fonts/Montserrat.otf'
+            variable: {
+              wght: true,
+              ital: true
+            },
+            subset: 'latin'
           }
         ],
         display: 'auto',

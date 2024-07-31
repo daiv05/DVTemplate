@@ -2,6 +2,16 @@ html {
   overflow-y: auto;
 }
 
+.v-main {
+  margin-right: 10px;
+}
+
+@media (max-width: 1279px) {
+  .v-main {
+    margin: 0 10px;
+  }
+}
+
 .spacer {
   padding: 100px 0;
 }

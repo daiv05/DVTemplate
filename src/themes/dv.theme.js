@@ -26,7 +26,10 @@ const DVLightTheme = {
     'on-surface-variant': '#fff',
     gray100: '#fafafa',
     primary200: '#90caf9',
-    secondary200: '#b39ddb'
+    secondary200: '#b39ddb',
+    darkText: '#212121',
+    darkprimary: '#1565c0',
+    darksecondary: '#4527a0'
   }
 }
 
@@ -50,7 +53,7 @@ const DVDarkTheme = {
     lightsuccess: '#57B07E',
     lighterror: '#A64949',
     lightwarning: '#E5B663',
-    lightText: '#616161',
+    lightText: '#7b7b7b',
     borderLight: '#d0d0d0',
     inputBorder: '#787878',
     containerBg: '#3C3D3E',
@@ -58,7 +61,10 @@ const DVDarkTheme = {
     'on-surface-variant': '#0D0D0D',
     gray100: '#fafafa',
     primary200: '#90caf9',
-    secondary200: '#b39ddb'
+    secondary200: '#b39ddb',
+    darkText: '#d0d0d0',
+    darkprimary: '#1565c0',
+    darksecondary: '#4527a0'
   }
 }
 

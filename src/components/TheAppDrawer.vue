@@ -1,11 +1,9 @@
 <template>
   <v-navigation-drawer
     v-model="drawer"
-    left
     elevation="0"
     rail-width="75"
     mobile-breakpoint="lg"
-    app
     class="leftSidebar no-spacer"
     :rail="miniSidebar"
     expand-on-hover
@@ -13,11 +11,7 @@
     <div class="pa-5">
       <LogoNav />
     </div>
-    <OverlayScrollbarsComponent
-      element="span"
-      :options="{ scrollbars: { autoHide: 'scroll' } }"
-      defer
-    >
+    <OverlayScrollbarsComponent element="span" :options="{ scrollbars: { autoHide: 'scroll' } }">
       <div class="scrollnavbar">
         <v-list class="pa-4">
           <template v-for="(item, i) in sidebarMenu" :key="i">
@@ -35,7 +29,7 @@
 <script setup>
 import { useAppStore } from '@/stores/app'
 import { storeToRefs } from 'pinia'
-import sidebarItems from './sidebarItem'
+import sidebarItems from '../navigation/sidebarItem'
 import { OverlayScrollbarsComponent } from 'overlayscrollbars-vue'
 
 const { drawer, miniSidebar } = storeToRefs(useAppStore())

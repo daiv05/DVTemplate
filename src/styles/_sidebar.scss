@@ -52,7 +52,7 @@
   .v-list {
     .v-list-item--active {
       .v-list-item-title {
-        font-weight: 500;
+        font-weight: 700;
       }
     }
     .sidebarchip .v-icon {
@@ -60,9 +60,9 @@
     }
     .v-list-group {
       // .v-list-item:hover > .v-list-item__overlay,
-      // .v-list-item--active > .v-list-item__overlay {
-      //   background-color: transparent;
-      // }
+      .v-list-item--active > .v-list-item__overlay {
+        background-color: transparent;
+      }
       .v-list-item:focus-visible > .v-list-item__overlay {
         opacity: 0;
       }

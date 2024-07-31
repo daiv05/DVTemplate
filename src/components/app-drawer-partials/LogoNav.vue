@@ -1,6 +1,6 @@
 <template>
   <div class="logo">
-    <RouterLink to="/">
+    <RouterLink to="/inicio">
       <img :src="maki" width="45" alt="logo" />
     </RouterLink>
   </div>
