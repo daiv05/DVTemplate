@@ -16,11 +16,13 @@ const breadcrumbs = ref([
     <v-row>
       <v-col cols="12">
         <AppBaseCard title="Manejo de importaciones">
-          <p class="mb-2">
-            Unplugin es una herramienta que permite importar archivos de diferentes formatos en tu proyecto.
+          <p>
+            Unplugin es una herramienta que permite importar archivos de diferentes formatos en tu
+            proyecto.
           </p>
-          <p class="mb-2">
-            Con unplugin puedes importar archivos de diferentes formatos como CSS, SCSS, SVG, JSON, entre otros.
+          <p>
+            Con unplugin puedes importar archivos de diferentes formatos como CSS, SCSS, SVG, JSON,
+            entre otros.
           </p>
         </AppBaseCard>
       </v-col>

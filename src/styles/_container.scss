@@ -2,9 +2,13 @@ html {
   overflow-y: auto;
 }
 
-.v-main {
-  margin-right: 10px;
+p {
+  margin-bottom: 8px;
 }
+
+// .v-main {
+//   margin-right: 10px;
+// }
 
 @media (max-width: 1279px) {
   .v-main {

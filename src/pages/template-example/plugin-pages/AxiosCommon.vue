@@ -16,13 +16,15 @@ const breadcrumbs = ref([
     <v-row>
       <v-col cols="12">
         <AppBaseCard title="AxiosCommon">
-          <p class="mb-2">
-            AxiosCommon es un archivo que contiene la configuración de axios para realizar peticiones a un servidor.
+          <p>
+            AxiosCommon es un archivo que contiene la configuración de axios para realizar
+            peticiones a un servidor.
           </p>
-          <p class="mb-2">
-            En este archivo se configura el baseURL, el timeout y los headers que se enviarán en cada petición.
+          <p>
+            En este archivo se configura el baseURL, el timeout y los headers que se enviarán en
+            cada petición.
           </p>
-          <p class="mb-2">
+          <p>
             Para utilizarlo, simplemente importa el archivo y realiza las peticiones necesarias.
           </p>
         </AppBaseCard>

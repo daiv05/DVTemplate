@@ -87,11 +87,11 @@ const dvthemedarkCode = `
     <v-row>
       <v-col cols="12">
         <AppBaseCard title="DVTheme y estilos predefinidos">
-          <p class="mb-2">
+          <p>
             La plantilla incluye dos temas de colores, uno claro y uno oscuro. Puedes cambiar los
             temas disponibles en el proyecto en el archivo <code>src/plugins/vuetify.js</code>.
           </p>
-          <p class="mb-2">
+          <p>
             Los temas son definidos en la carpeta <code>src/themes</code> y puedes personalizarlos a
             tu gusto o agregar más. Puedes ver los colores disponibles en este enlace:
             <RouterLink :to="{ name: 'colores' }">Colores - DVTheme</RouterLink>.
@@ -104,10 +104,10 @@ const dvthemedarkCode = `
 
           <v-tabs-window v-model="tab">
             <v-tabs-window-item :value="1" class="pa-0">
-              <highlightjs language="javascript" :code="dvthemelightCode" />
+              <highlightjs language="javascript" :code="dvthemelightCode" :autodetect="false" />
             </v-tabs-window-item>
             <v-tabs-window-item :value="2" class="pa-0">
-              <highlightjs language="javascript" :code="dvthemedarkCode" />
+              <highlightjs language="javascript" :code="dvthemedarkCode" :autodetect="false" />
             </v-tabs-window-item>
           </v-tabs-window>
           <p class="my-4">
@@ -116,7 +116,7 @@ const dvthemedarkCode = `
           </p>
           <div id="hierarchy">
             <div class="foldercontainer text-lightText">
-              <span class="folder"><v-icon>mdi-palette-swatch-outline</v-icon> styles</span>
+              <span class="folder"><v-icon icon="mdi-palette-swatch-outline"></v-icon> styles</span>
               <span class="file"
                 >_container.scss <span class="mx-4">-------</span>
                 <span>Estilos aplicados al contenedor global de la aplicacion</span></span
@@ -179,7 +179,11 @@ const dvthemedarkCode = `
   padding-right: 10px;
 }
 
+:deep(pre) {
+  border-radius: 30px 30px 30px 30px !important;
+}
+
 // :deep(code.hljs.go) {
-//   background: rgb(var(--v-theme-lightsecondary));
+//   background: rgb(33, 33, 33)
 // }
 </style>

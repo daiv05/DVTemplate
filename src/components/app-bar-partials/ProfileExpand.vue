@@ -32,7 +32,7 @@ const authStore = useAuthStore()
       <v-list class="mt-3">
         <v-list-item color="secondary" rounded="md" @click="authStore.logout()">
           <template #prepend>
-            <v-icon size="20" class="mr-2">mdi-logout</v-icon>
+            <v-icon size="20" class="mr-2" icon="mdi-logout"></v-icon>
           </template>
           <v-list-item-title class="text-subtitle-2"> Logout</v-list-item-title>
         </v-list-item>

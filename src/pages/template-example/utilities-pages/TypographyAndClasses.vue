@@ -71,11 +71,11 @@ const headings = shallowRef([
     <v-row>
       <v-col cols="12">
         <AppBaseCard title="Fuente predeterminada">
-          <p class="mb-2">
+          <p>
             Por defecto, la fuente utilizada por Vuetify es <code>Roboto</code>, en esta plantilla
             se ha configurado para que la fuente sea <code>Montserrat</code>.
           </p>
-          <p class="mb-2">
+          <p>
             Puedes explorar los cambios realizados en el archivo
             <code>src/styles/_variables.scss</code>.
             <v-list>
@@ -123,8 +123,4 @@ const headings = shallowRef([
   </div>
 </template>
 
-<style scoped lang="scss">
-// :deep(code.hljs.go) {
-//   background: rgb(var(--v-theme-lightsecondary));
-// }
-</style>
+<style scoped lang="scss"></style>

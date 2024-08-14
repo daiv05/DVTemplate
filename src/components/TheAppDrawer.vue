@@ -11,7 +11,11 @@
     <div class="pa-5">
       <LogoNav />
     </div>
-    <OverlayScrollbarsComponent element="span" :options="{ scrollbars: { autoHide: 'scroll' } }">
+    <OverlayScrollbarsComponent
+      element="span"
+      :options="{ scrollbars: { autoHide: 'scroll' } }"
+      defer
+    >
       <div class="scrollnavbar">
         <v-list class="pa-4">
           <template v-for="(item, i) in sidebarMenu" :key="i">

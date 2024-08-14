@@ -20,10 +20,13 @@ export default createVuetify({
       rounded: 'md'
     },
     VTextField: {
-      rounded: 'lg'
+      rounded: 'lg',
     },
     VTooltip: {
       location: 'top'
+    },
+    VMain: {
+      style: 'margin-right: 10px;'
     }
-  }
+  },
 })

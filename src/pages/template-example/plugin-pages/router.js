@@ -10,8 +10,8 @@ export default [
     component: () => import('./DateFns.vue')
   },
   {
-      path: '/plugins/unplugin',
-      name: 'unplugin',
-      component: () => import('./UnPlugin.vue')
-  },
+    path: '/plugins/unplugin',
+    name: 'unplugin',
+    component: () => import('./UnPlugin.vue')
+  }
 ]

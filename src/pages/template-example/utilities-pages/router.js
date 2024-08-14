@@ -7,7 +7,7 @@ export default [
   {
     path: '/utilidades/tipografia',
     name: 'tipografia',
-    component: () => import('./Typography.vue')
+    component: () => import('./TypographyAndClasses.vue')
   },
   {
     path: '/utilidades/colores',
@@ -18,5 +18,10 @@ export default [
     path: '/utilidades/iconos/material',
     name: 'material-icons',
     component: () => import('./MaterialIcons.vue')
+  },
+  {
+    path: '/utilidades/alertas',
+    name: 'alertas-temporales',
+    component: () => import('./TemporalAlerts.vue')
   }
 ]

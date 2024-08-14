@@ -18,6 +18,6 @@ const props = defineProps({
     }}</v-icon>
   </template>
   <template v-else>
-    <v-icon size="20" stroke-width="1.5" class="iconClass">{{ props.item }}</v-icon>
+    <v-icon size="20" stroke-width="1.5" class="iconClass" :icon="props.item"></v-icon>
   </template>
 </template>

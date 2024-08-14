@@ -63,7 +63,7 @@ const selectNotify = ref('Todas')
                 color="lightsuccess"
                 class="mr-3 py-2 text-success"
               >
-                <v-icon size="20">mdi-tag-search-outline</v-icon>
+                <v-icon size="20" icon="mdi-tag-search-outline"></v-icon>
               </v-avatar>
             </template>
             <div class="d-inline-flex align-center justify-space-between w-100">

@@ -1,6 +1,5 @@
 <template>
-  <v-locale-provider>
-    <v-app :class="[miniSidebar ? 'mini-sidebar' : '']">
+    <v-app class="bg-surface" :class="[miniSidebar ? 'mini-sidebar' : '']">
       <TheAppDrawer style="position: fixed" />
       <TheAppBar />
       <v-main style="--v-layout-top: 0px">
@@ -25,7 +24,6 @@
         <TheAppFooter />
       </v-main>
     </v-app>
-  </v-locale-provider>
 </template>
 
 <script setup>

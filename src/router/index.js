@@ -4,6 +4,8 @@ import { useAuthStore } from '@/stores/auth.js'
 import routerUtilitiesPages from '@/pages/template-example/utilities-pages/router.js'
 import routerPluginPages from '@/pages/template-example/plugin-pages/router.js'
 
+const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms))
+
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
@@ -31,7 +33,19 @@ const router = createRouter({
       name: 'not-found',
       component: () => import('../pages/NotFound.vue')
     }
-  ]
+  ],
+  async scrollBehavior(to, from, savedPosition) {
+    if (savedPosition) {
+      await delay(10)
+      return savedPosition
+    } else if (to.hash) {
+      await delay(10)
+      return { el: to.hash, behavior: 'smooth' }
+    } else {
+      await delay(10)
+      return { top: 0, behavior: 'smooth', left: 0}
+    }
+  }
 })
 
 router.beforeEach(async (to) => {

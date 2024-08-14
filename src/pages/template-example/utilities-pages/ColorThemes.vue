@@ -29,7 +29,7 @@ const darkColorsArrays = shallowRef(Object.keys(DVDarkTheme.colors))
           <v-tabs-window v-model="tab">
             <v-tabs-window-item :value="1" class="pa-0">
               <v-row class="d-flex justify-center flex-wrap ga-1">
-                <v-col cols="12" md="3" v-for="(color, i) in lightColorsArrays" :key="i">
+                <v-col v-for="(color, i) in lightColorsArrays" :key="i" cols="12" md="3">
                   <v-card
                     class="my-4 mx-auto rounded-lg text-center d-flex align-center"
                     elevation="0"
@@ -47,7 +47,7 @@ const darkColorsArrays = shallowRef(Object.keys(DVDarkTheme.colors))
             </v-tabs-window-item>
             <v-tabs-window-item :value="2" class="pa-0">
               <v-row class="d-flex justify-center flex-wrap ga-1">
-                <v-col cols="12" md="3" v-for="(color, i) in darkColorsArrays" :key="i">
+                <v-col v-for="(color, i) in darkColorsArrays" :key="i" cols="12" md="3">
                   <v-card
                     class="my-4 mx-auto rounded-lg text-center d-flex align-center"
                     elevation="0"
@@ -70,8 +70,4 @@ const darkColorsArrays = shallowRef(Object.keys(DVDarkTheme.colors))
   </div>
 </template>
 
-<style scoped lang="scss">
-// :deep(code.hljs.go) {
-//   background: rgb(var(--v-theme-lightsecondary));
-// }
-</style>
+<style scoped lang="scss"></style>

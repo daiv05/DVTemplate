@@ -4,7 +4,7 @@ const props = defineProps({
     type: String,
     default: ''
   }
-});
+})
 </script>
 
 <template>
@@ -23,7 +23,6 @@ const props = defineProps({
 </template>
 
 <style scoped lang="scss">
-
 .v-card-item {
   padding: 16px 24px;
 }
@@ -35,5 +34,4 @@ const props = defineProps({
 .v-card-text {
   padding: 24px;
 }
-
 </style>

@@ -95,7 +95,7 @@ $new-typography: (
 );
 
 @use 'vuetify/settings' with (
-  $typography: $new-typography,
+  $typography: $new-typography
 );
 
 html,
