@@ -1,8 +1,10 @@
 <template>
   <v-theme-provider :theme>
-    <notifications position="top center" />
-    <AppLoader v-if="isLoading" />
-    <RouterView />
+    <v-app>
+      <notifications position="top center" :max="3" />
+      <AppLoader v-if="isLoading" />
+      <RouterView />
+    </v-app>
   </v-theme-provider>
 </template>
 

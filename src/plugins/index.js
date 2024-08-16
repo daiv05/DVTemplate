@@ -11,7 +11,7 @@ import router from '@/router'
 import alertToast from '@/plugins/notification'
 import axios from '@/plugins/axios'
 import Notifications from '@kyvg/vue3-notification'
-import 'highlight.js/styles/vs2015.css'
+import 'highlight.js/styles/stackoverflow-dark.css'
 import 'highlight.js/lib/common'
 import hljsVuePlugin from '@highlightjs/vue-plugin'
 
@@ -26,5 +26,5 @@ export function registerPlugins(app) {
     .use(Notifications)
     .use(hljsVuePlugin)
     .provide('alertToast', alertToast)
-    .provide('fetchData', axios)
+    .provide('axiosCommon', axios)
 }

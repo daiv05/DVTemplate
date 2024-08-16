@@ -17,16 +17,39 @@ const breadcrumbs = ref([
       <v-col cols="12">
         <AppBaseCard title="AxiosCommon">
           <p>
-            AxiosCommon es un archivo que contiene la configuración de axios para realizar
-            peticiones a un servidor.
+            Axios es un cliente HTTP basado en promesas para el navegador y Node.js. Axios hace que
+            sea fácil enviar solicitudes HTTP desde el navegador.
           </p>
           <p>
-            En este archivo se configura el baseURL, el timeout y los headers que se enviarán en
-            cada petición.
+            Como parte de la configuración de Axios, se ha definido un archivo de configuración en
+            <code>src/AxiosCommon.js</code> que se importa en el archivo
+            <code>src/plugins/axios.js</code> y se utiliza en la configuración de Axios.
           </p>
-          <p>
-            Para utilizarlo, simplemente importa el archivo y realiza las peticiones necesarias.
-          </p>
+          <p>La configuración incluye:</p>
+          <v-list>
+            <v-list-item>
+              <v-list-item-title>Base URL</v-list-item-title>
+              <v-list-item-subtitle>URL base para todas las solicitudes</v-list-item-subtitle>
+            </v-list-item>
+            <v-list-item>
+              <v-list-item-title>Timeout</v-list-item-title>
+              <v-list-item-subtitle>
+                Tiempo de espera antes de que la solicitud se cancele
+              </v-list-item-subtitle>
+            </v-list-item>
+            <v-list-item>
+              <v-list-item-title>Headers</v-list-item-title>
+              <v-list-item-subtitle
+                >Encabezados predeterminados para todas las solicitudes</v-list-item-subtitle
+              >
+            </v-list-item>
+            <v-list-item>
+              <v-list-item-title>Auth</v-list-item-title>
+              <v-list-item-subtitle
+                >Información de autenticación predeterminada</v-list-item-subtitle
+              >
+            </v-list-item>
+          </v-list>
         </AppBaseCard>
       </v-col>
     </v-row>

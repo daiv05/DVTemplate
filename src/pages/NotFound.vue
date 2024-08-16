@@ -12,7 +12,7 @@
               Es posible que la página que busca haya sido eliminada, haya cambiado de nombre o no
               esté disponible temporalmente. Por favor, intente lo siguiente:
             </p>
-            <v-list lines="two pa-0">
+            <v-list lines="two">
               <v-list-item>
                 <v-list-item-subtitle>
                   - Si ha escrito la dirección de la página en la barra de direcciones, asegúrese de

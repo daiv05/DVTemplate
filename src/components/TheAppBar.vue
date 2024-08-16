@@ -8,6 +8,7 @@ const { toggleDrawer, toggleMiniSidebar } = useAppStore()
     <v-hover>
       <template #default="{ isHovering, props: propsHover }">
         <v-btn
+          title="Toggle Mini Sidebar"
           :class="{
             'hidden-md-and-down text-lightsecondary': isHovering,
             'hidden-md-and-down text-secondary': !isHovering
@@ -27,6 +28,7 @@ const { toggleDrawer, toggleMiniSidebar } = useAppStore()
     <v-hover>
       <template #default="{ isHovering, props: propsHover }">
         <v-btn
+          title="Toggle Sidebar"
           :class="{
             'hidden-lg-and-up text-lightsecondary ms-3': isHovering,
             'hidden-lg-and-up text-secondary ms-3': !isHovering

@@ -94,7 +94,7 @@ const breadcrumbs = ref([
               <v-row class="ma-2">
                 <v-col cols="12" class="d-flex justify-center flex-wrap ga-2">
                   <v-btn elevation="0" @click="alert('success')" color="success">Success</v-btn>
-                  <v-btn elevation="0" @click="alert('info')" color="info">Info</v-btn>
+                  <v-btn elevation="0" @click="alert('info')" color="info">Default (info)</v-btn>
                   <v-btn elevation="0" @click="alert('warn')" color="warning">Warning</v-btn>
                   <v-btn elevation="0" @click="alert('error')" color="error">Error</v-btn>
                 </v-col>
@@ -112,8 +112,9 @@ const breadcrumbs = ref([
                 <v-list-item>
                   <v-list-item-title>type (opcional)</v-list-item-title>
                   <v-list-item-subtitle>
-                    El tipo de notificación, puede ser: <code>success</code>, <code>info</code>,
-                    <code>warn</code> o <code>error</code>
+                    El tipo de notificación, puede ser: <code>success</code>, <code>warn</code>,
+                    <code>error</code> y un ultimo color por default al que se recomienda manejar
+                    como <code>info</code>,
                   </v-list-item-subtitle>
                 </v-list-item>
                 <v-list-item>
@@ -138,16 +139,16 @@ const breadcrumbs = ref([
               <v-row>
                 <v-col cols="12">
                   <p class="my-2">
-                    Algunas de estas y otras opciones pueden modificarse desde el
-                    componente, disponible en <code>App.vue</code>
+                    Algunas de estas y otras opciones pueden modificarse desde el componente,
+                    disponible en <code>App.vue</code>
                   </p>
                 </v-col>
               </v-row>
               <highlightjs
-                  :code="codeNotiComponent"
-                  language="html"
-                  :autodetect="false"
-                ></highlightjs>
+                :code="codeNotiComponent"
+                language="html"
+                :autodetect="false"
+              ></highlightjs>
             </v-col>
           </v-row>
         </AppBaseCard>

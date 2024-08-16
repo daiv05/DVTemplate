@@ -3,28 +3,31 @@
     <v-container>
       <v-row>
         <v-col cols="12" md="6" offset-md="3">
-          <v-card>
-            <v-card-title>Login</v-card-title>
-            <v-card-text>
-              <v-text-field
-                v-model="email"
-                rounded="md"
-                label="Correo Electrónico"
-                type="email"
-                required
-              ></v-text-field>
-              <v-text-field
-                v-model="password"
-                rounded="md"
-                label="Contraseña"
-                type="password"
-                required
-              ></v-text-field>
-            </v-card-text>
-            <v-card-actions class="justify-center">
-              <v-btn color="primary" @click="loginLocal">Iniciar Sesión</v-btn>
-            </v-card-actions>
-          </v-card>
+          <v-form>
+            <v-card>
+              <v-card-title>Login</v-card-title>
+              <v-card-text>
+                <v-text-field
+                  v-model="email"
+                  rounded="md"
+                  label="Correo Electrónico"
+                  type="email"
+                  required
+                ></v-text-field>
+                <v-text-field
+                  v-model="password"
+                  rounded="md"
+                  label="Contraseña"
+                  type="password"
+                  autocomplete=""
+                  required
+                ></v-text-field>
+              </v-card-text>
+              <v-card-actions class="justify-center">
+                <v-btn color="primary" @click="loginLocal">Iniciar Sesión</v-btn>
+              </v-card-actions>
+            </v-card>
+          </v-form>
         </v-col>
       </v-row>
     </v-container>

@@ -33,4 +33,3 @@ import { storeToRefs } from 'pinia'
 const { miniSidebar } = storeToRefs(useAppStore())
 </script>
 
-<style scoped lang="scss"></style>
