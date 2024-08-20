@@ -23,5 +23,15 @@ export default [
     path: '/utilidades/alertas',
     name: 'alertas-temporales',
     component: () => import('./TemporalAlerts.vue')
+  },
+  {
+    path: '/utilidades/loader',
+    name: 'suspense-loader',
+    component: () => import('./SuspenseLoader.vue')
+  },
+  {
+    path: '/utilidades/services',
+    name: 'services-http',
+    component: () => import('./ServicesHttp.vue')
   }
 ]

@@ -63,33 +63,36 @@ const iconExamples = shallowRef([
           <v-row>
             <v-col cols="12">
               <p>
-                Por defecto, Vuetify incluye Material Design Icons. Puedes encontrar la lista
-                completa de iconos en la página oficial de Material Design Icons.
-              </p>
-              <p>
-                En la
+                Vuetify incluye Material Design Icons. Puedes encontrar la lista completa de iconos
+                en la página oficial de
                 <a
                   href="https://vuetifyjs.com/en/components/icons/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  >documentación oficial de Vuetify</a
+                >
+                  Material Symbol & Icons</a
+                >. En la
+                <a
+                  href="https://vuetifyjs.com/en/components/icons/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  documentación oficial de Vuetify </a
                 >, puedes encontrar la lista de iconos disponibles, más información sobre cómo
-                utilizarlos o agregar otras fuentes.
-              </p>
-              <p>
-                Otra fuente de consulta (recomendada) de estos iconos es
+                utilizarlos o agregar otras fuentes. <br> Otra fuente de consulta (recomendada) de estos
+                iconos es
                 <a
                   href="https://pictogrammers.com/library/mdi/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  >pictogrammers</a
                 >
+                  pictogrammers
+                </a>
               </p>
               <p>El uso basico de los iconos es el siguiente:</p>
-              <br />
               <highlightjs language="html" :code="codeIcons" :autodetect="false" />
               <v-card variant="text">
-                <v-card-title>Ejemplos:</v-card-title>
+                <v-card-title><p>Ejemplos:</p></v-card-title>
                 <v-card-text>
                   <v-row class="d-flex justify-center flex-wrap ga-1">
                     <v-col v-for="(icon, i) in iconExamples" :key="i" cols="12" md="3">

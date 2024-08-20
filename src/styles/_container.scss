@@ -1,10 +1,23 @@
 html {
   overflow-y: auto;
+  box-sizing: border-box;
 }
 
 p {
+  font-size: 14px;
   margin-bottom: 8px;
+  line-height: 1.8;
 }
+
+.max-wch {
+  padding: 0 2%;
+  margin: 0 1%;
+}
+
+.max-wch-base-card {
+  max-width: 100ch;
+}
+
 
 // .v-main {
 //   margin-right: 10px;

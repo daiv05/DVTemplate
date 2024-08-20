@@ -16,15 +16,15 @@ const props = defineProps({
 </script>
 
 <template>
-  <v-row class="page-breadcrumb mb-1 mt-1">
+  <v-row class="page-breadcrumb my-1">
     <v-col cols="12" md="12">
-      <v-card variant="flat" class="px-4 py-3 rounded-lg">
+      <v-card variant="flat" class="px-4 py-3 rounded-lg max-wch">
         <v-row no-gutters class="align-center">
-          <v-col md="5">
-            <h3 class="text-h3">{{ props.title }}</h3>
+          <v-col md="5" cols="12">
+            <h3 class="text-h3 text-el mx-2">{{ props.title }}</h3>
           </v-col>
 
-          <v-col md="7" sm="12" cols="12">
+          <v-col md="7" cols="12">
             <v-breadcrumbs :items="props.breadcrumbs" class="text-h5 justify-md-end pa-1">
               <template #divider>
                 <div class="d-flex align-center">
@@ -45,7 +45,7 @@ const props = defineProps({
   </v-row>
 </template>
 
-<style lang="scss">
+<style scoped lang="scss">
 .page-breadcrumb {
   .v-toolbar {
     background: transparent;

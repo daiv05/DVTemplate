@@ -1,6 +1,6 @@
 <template>
   <v-footer class="footer d-flex flex-column justify-center text-center align-center">
-    <div class="my-1">
+    <div class="my-2">
       <a
         href="https://github.com/daiv05/musycharts-dcdv"
         target="_blank"
@@ -17,7 +17,7 @@
       </a>
     </div>
     <div class="text-center mb-2">
-      <p class="text-grey-darken-1">&copy; 2024 DVTemplate. Todos los derechos reservados.</p>
+      <span class="text-grey-darken-1">&copy; 2024 DVTemplate. Todos los derechos reservados.</span>
     </div>
   </v-footer>
 </template>

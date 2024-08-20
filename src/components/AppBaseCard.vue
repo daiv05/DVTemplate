@@ -8,23 +8,24 @@ const props = defineProps({
 </script>
 
 <template>
-  <v-card variant="flat" class="rounded-lg">
-    <v-card-item>
-      <div class="d-sm-flex align-center justify-space-between">
-        <v-card-title>{{ props.title }}</v-card-title>
-        <slot name="action"></slot>
+  <v-card variant="flat" class="rounded-lg max-wch pb-4">
+    <v-card-item class="d-flex justify-center">
+      <div class="d-sm-flex align-center max-wch-base-card">
+        <v-card-title class="text-center">{{ props.title }}</v-card-title>
       </div>
     </v-card-item>
     <v-divider></v-divider>
     <v-card-text>
-      <slot />
+      <div class="max-wch-base-card mx-auto">
+        <slot />
+      </div>
     </v-card-text>
   </v-card>
 </template>
 
 <style scoped lang="scss">
 .v-card-item {
-  padding: 16px 24px;
+  padding: 16px 48px;
 }
 
 .v-card-title {

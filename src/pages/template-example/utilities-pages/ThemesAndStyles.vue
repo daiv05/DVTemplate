@@ -89,11 +89,11 @@ const dvthemedarkCode = `
         <AppBaseCard title="DVTheme y estilos predefinidos">
           <p>
             La plantilla incluye dos temas de colores, uno claro y uno oscuro. Puedes cambiar los
-            temas disponibles en el proyecto en el archivo <code>src/plugins/vuetify.js</code>.
+            temas disponibles en el proyecto en <code>src/plugins/vuetify.js</code>.
           </p>
           <p>
             Los temas son definidos en la carpeta <code>src/themes</code> y puedes personalizarlos a
-            tu gusto o agregar más. Puedes ver los colores disponibles en este enlace:
+            tu gusto o agregar más. Puedes ver los colores disponibles en:
             <RouterLink :to="{ name: 'colores' }">Colores - DVTheme</RouterLink>.
           </p>
 
@@ -111,8 +111,7 @@ const dvthemedarkCode = `
             </v-tabs-window-item>
           </v-tabs-window>
           <p class="my-4">
-            Los estilos predefinidos son definidos en el archivo <code>src/styles</code>, teniendo
-            la siguiente estructura:
+            Los estilos predefinidos puedes consultarlos en <code>src/styles</code>
           </p>
           <div id="hierarchy">
             <div class="foldercontainer text-lightText">

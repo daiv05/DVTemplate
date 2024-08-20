@@ -29,9 +29,3 @@ const breadcrumbs = ref([
     </v-row>
   </div>
 </template>
-
-<style scoped lang="scss">
-// :deep(code.hljs.go) {
-//   background: rgb(var(--v-theme-lightsecondary));
-// }
-</style>

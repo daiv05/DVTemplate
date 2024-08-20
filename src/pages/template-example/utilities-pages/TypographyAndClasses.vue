@@ -72,39 +72,36 @@ const headings = shallowRef([
       <v-col cols="12">
         <AppBaseCard title="Fuente predeterminada">
           <p>
-            Por defecto, la fuente utilizada por Vuetify es <code>Roboto</code>, en esta plantilla
-            se ha configurado para que la fuente sea <code>Montserrat</code>.
-          </p>
-          <p>
+            La fuente utilizada de Vuetify, <code>Roboto</code>, se ha reemplazado por <code>Montserrat</code>. 
             Puedes explorar los cambios realizados en el archivo
             <code>src/styles/_variables.scss</code>.
-            <v-list>
-              <v-list-item prepend-icon="mdi-variable">
-                <v-list-item-title>Variables</v-list-item-title>
-                <v-list-item-subtitle
-                  >Se han redefinido las variable de tipografía predeterminada de
-                  Vuetify</v-list-item-subtitle
-                >
-              </v-list-item>
-              <v-list-item prepend-icon="mdi-toy-brick-outline">
-                <v-list-item-title>Instalación</v-list-item-title>
-                <v-list-item-subtitle
-                  >Utilizando el paquete de <code>unplugin-fonts</code> y
-                  <code>@fontsource-variable/montserrat</code> se instaló la fuente en el
-                  sistema</v-list-item-subtitle
-                >
-                <v-list-item-subtitle
-                  >Puedes ver más sobre la configuración en
-                  <RouterLink :to="{ name: 'unplugin', hash: '#unplugin-fonts' }"
-                    >unplugin-fonts</RouterLink
-                  >
-                </v-list-item-subtitle>
-              </v-list-item>
-            </v-list>
           </p>
+          <v-list lines>
+            <v-list-item prepend-icon="mdi-variable">
+              <v-list-item-title>Variables</v-list-item-title>
+              <v-list-item-subtitle
+                >Se han redefinido las variable de tipografía predeterminada de
+                Vuetify</v-list-item-subtitle
+              >
+            </v-list-item>
+            <v-list-item prepend-icon="mdi-toy-brick-outline">
+              <v-list-item-title>Instalación</v-list-item-title>
+              <v-list-item-subtitle
+                >Utilizando el paquete de <code>unplugin-fonts</code> y
+                <code>@fontsource-variable/montserrat</code> se instaló la fuente en el
+                sistema</v-list-item-subtitle
+              >
+              <v-list-item-subtitle
+                >Puedes ver más sobre la configuración en
+                <RouterLink :to="{ name: 'unplugin', hash: '#unplugin-fonts' }"
+                  >unplugin-fonts</RouterLink
+                >
+              </v-list-item-subtitle>
+            </v-list-item>
+          </v-list>
           <v-row class="my-2">
             <v-col cols="12">
-              Clases de fuente disponibles:
+              <p>Clases de fuente disponibles:</p>
               <v-card v-for="(head, i) in headings" :key="i" class="my-4 rounded-lg" elevation="0">
                 <v-card-title>
                   <span :class="head.class">{{ head.title }}</span>

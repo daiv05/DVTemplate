@@ -2,6 +2,7 @@
   <v-theme-provider :theme>
     <v-app>
       <notifications position="top center" :max="3" />
+      <notifications position="bottom left" group="info-dv" :max="3" />
       <AppLoader v-if="isLoading" />
       <RouterView />
     </v-app>

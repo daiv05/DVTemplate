@@ -12,20 +12,24 @@ const alert = (type) => {
   })
 }
 
-const codeExample = `
-  const alertToast = inject('alertToast')
+const alertServer = (type) => {
+  alertToast({
+    title: 'Error del servidor',
+    text: 'Este es un mensaje de tipo: ' + type,
+    type: type,
+    group: 'info-dv'
+  })
+}
 
-  const alert = (type) => {
-    alertToast({
-      title: 'Notificación',
-      text: 'Este es un mensaje de tipo: ' + type,
-      type: type
-    })
-  }
+const codeExample = `  const alertToast = inject('alertToast')
+  alertToast({
+    title: 'Notificación',
+    text: 'Esta es una alerta de tipo: success',
+    type: 'success'
+  })
 `
 
-const codeConfig = `
-  // Tambien puedes importar directamente la función notify de 
+const codeConfig = `  // Tambien puedes importar directamente la función notify de 
   // la librería en cualquier componente
   import { useNotification } from '@kyvg/vue3-notification'
   const { notify } = useNotification()
@@ -40,6 +44,26 @@ const codeConfig = `
   export default alertToast
 `
 const codeNotiComponent = `<notifications position="top center" />`
+
+const codeNotiGroups = `  <notifications position="top center" group="one" />
+
+  <notifications position="bottom left" group="two" />
+`
+
+const codeExampleGroup = `  alertToast({
+    title: 'Notificación de sistema',
+    text: 'Esta es una alerta de tipo: success',
+    type: 'success',
+    group: 'one'
+  })
+
+  alertToast({
+    title: 'Error de servidor',
+    text: 'Esta es una alerta de tipo: error',
+    type: 'error',
+    group: 'two'
+  })
+`
 
 const page = ref({ title: 'Notificaciones' })
 const breadcrumbs = ref([
@@ -59,14 +83,12 @@ const breadcrumbs = ref([
           <v-row>
             <v-col cols="12">
               <p>
-                Como parte de la plantilla, se ha integrado la librería
+                Se ha integrado la librería
                 <a href="https://github.com/kyvg/vue3-notification" target="_blank"
                   >vue3-notification</a
                 >
-                para mostrar notificaciones temporales en la aplicación.
-              </p>
-              <p>
-                Puedes preconfigurar las alertas por defecto, en el archivo
+                para mostrar alertas temporales en la aplicación. Puedes preconfigurar las alertas
+                por defecto, en
                 <code>src\plugins\notification.js</code>
               </p>
               <v-row>
@@ -136,19 +158,36 @@ const breadcrumbs = ref([
                   </v-list-item-subtitle>
                 </v-list-item>
               </v-list>
-              <v-row>
-                <v-col cols="12">
-                  <p class="my-2">
-                    Algunas de estas y otras opciones pueden modificarse desde el componente,
-                    disponible en <code>App.vue</code>
-                  </p>
-                </v-col>
-              </v-row>
+              <p class="my-2">
+                Algunas de estas y otras opciones pueden modificarse desde el componente, disponible
+                en <code>App.vue</code>
+              </p>
               <highlightjs
                 :code="codeNotiComponent"
                 language="html"
                 :autodetect="false"
               ></highlightjs>
+              <p class="my-2">
+                Puedes agregar mas componentes de <code>notifications</code> con distintas
+                configuraciones, como posicion, velocidad o duración, y asignarle un
+                <code>group</code> distinto. Por ejemplo, si quieres que las alertas del sistema se
+                muestren en la posición 'top center', y los errores del servidor en la posición
+                'bottom left':
+              </p>
+              <highlightjs :code="codeNotiGroups" language="html" :autodetect="false"></highlightjs>
+              <p class="my-2">
+                Y para definir donde quieres que se muestre una alerta en específico se debe agregar la
+                propiedad 'group' al objeto:
+              </p>
+              <highlightjs
+                :code="codeExampleGroup"
+                language="javascript"
+                :autodetect="false"
+              ></highlightjs>
+              <v-col cols="12" class="d-flex justify-center flex-wrap ga-2">
+                <v-btn elevation="0" @click="alert('success')" color="success">Web</v-btn>
+                <v-btn elevation="0" @click="alertServer('error')" color="error">Server</v-btn>
+              </v-col>
             </v-col>
           </v-row>
         </AppBaseCard>

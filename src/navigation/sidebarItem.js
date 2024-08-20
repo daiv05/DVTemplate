@@ -55,6 +55,16 @@ const sidebarItem = [
     icon: 'mdi-bell-alert-outline',
     to: '/utilidades/alertas'
   },
+  {
+    title: 'Suspense/Loader',
+    icon: 'mdi-reload',
+    to: '/utilidades/loader'
+  },
+  {
+    title: 'Services',
+    icon: 'mdi-lock-outline',
+    to: '/utilidades/services'
+  },
   { divider: true },
   { header: 'Plugins' },
   {

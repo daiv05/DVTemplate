@@ -16,7 +16,7 @@ export default async function axiosCommon(method = 'get', url = '', data = {}, h
 
   // Verificar si el método es válido
   if (!['get', 'post', 'put', 'delete', 'patch'].includes(method)) {
-    console.error('Invalid method for axiosCommon')
+    console.error('Invalid method for http request (axiosCommon)')
     return
   }
 
@@ -24,6 +24,10 @@ export default async function axiosCommon(method = 'get', url = '', data = {}, h
     config.params = data
   } else {
     config.data = data
+  }
+
+  if (headers) {
+    config.headers = headers
   }
 
   let response = null
