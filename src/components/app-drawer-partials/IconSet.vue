@@ -1,8 +1,8 @@
 <script setup>
 const props = defineProps({
   item: {
-    type: String,
-    default: ''
+    type: Object,
+    default: () => ({})
   },
   level: {
     type: Number,
@@ -13,11 +13,9 @@ const props = defineProps({
 
 <template>
   <template v-if="props.level > 0">
-    <v-icon size="5" fill="currentColor" stroke-width="1.5" class="iconClass">{{
-      props.item
-    }}</v-icon>
+    <component :is="props.item" style="font-size: 4"></component>
   </template>
   <template v-else>
-    <v-icon size="20" stroke-width="1.5" class="iconClass" :icon="props.item"></v-icon>
+    <component :is="props.item" style="font-size: 18"></component>
   </template>
 </template>

@@ -23,7 +23,6 @@ Instale su proyecto utilizando su gestor de paquetes preferido. Utilice el coman
 - ⚡ **Herramientas de última generación**: Impulsado por Vite, experimente arranques en frío rápidos y HMR instantánea (Hot Module Replacement). [Vite](https://vitejs.dev/)
 - 🧩 **Importación automática de componentes**: Agiliza tu flujo de trabajo con unplugin-vue-components, importando automáticamente los componentes a medida que los utilizas. [unplugin-vue-components](https://github.com/antfu/unplugin-vue-components)
 
-
 ## 💡 Uso
 
 Esta sección cubre cómo iniciar el servidor de desarrollo y construir tu proyecto para producción.
@@ -35,7 +34,9 @@ Para iniciar el servidor de desarrollo con hot-reload, ejecute el siguiente coma
 ```bash
 yarn dev
 ```
+
 o
+
 ```bash
 npm run dev
 ```
@@ -47,7 +48,9 @@ Para construir su proyecto para la producción, utilice:
 ```bash
 yarn build
 ```
+
 o
+
 ```bash
 npm run build
 ```

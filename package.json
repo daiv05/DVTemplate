@@ -21,7 +21,6 @@
     "@fontsource-variable/montserrat": "^5.0.19",
     "@highlightjs/vue-plugin": "^2.1.0",
     "@kyvg/vue3-notification": "^3.2.1",
-    "@mdi/font": "7.4.47",
     "@vueuse/core": "^10.11.1",
     "axios": "^1.7.4",
     "core-js": "^3.38.0",
@@ -32,6 +31,8 @@
     "vuetify": "^3.7.0"
   },
   "devDependencies": {
+    "@iconify-json/mdi": "^1.1.68",
+    "@mdi/js": "^7.4.47",
     "@vitejs/plugin-vue": "^5.1.2",
     "eslint": "^9.9.0",
     "eslint-config-prettier": "^9.1.0",
@@ -43,6 +44,7 @@
     "sass": "~1.74.1",
     "unplugin-auto-import": "^0.18.1",
     "unplugin-fonts": "^1.1.1",
+    "unplugin-icons": "^0.19.2",
     "unplugin-vue-components": "^0.27.4",
     "vite": "^5.4.0",
     "vite-plugin-vuetify": "^2.0.4",

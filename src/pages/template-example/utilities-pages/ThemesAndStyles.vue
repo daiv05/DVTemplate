@@ -88,13 +88,13 @@ const dvthemedarkCode = `
       <v-col cols="12">
         <AppBaseCard title="DVTheme y estilos predefinidos">
           <p>
-            La plantilla incluye dos temas de colores, uno claro y uno oscuro. Puedes cambiar los
-            temas disponibles en el proyecto en <code>src/plugins/vuetify.js</code>.
+            La plantilla incluye dos temas, uno claro y uno oscuro. Puedes cambiar los temas
+            disponibles dentro de la aplicación en <code>src/plugins/vuetify.js</code>.
           </p>
           <p>
             Los temas son definidos en la carpeta <code>src/themes</code> y puedes personalizarlos a
             tu gusto o agregar más. Puedes ver los colores disponibles en:
-            <RouterLink :to="{ name: 'colores' }">Colores - DVTheme</RouterLink>.
+            <RouterLink :to="{ name: 'colores' }">Colores</RouterLink>.
           </p>
 
           <v-tabs v-model="tab" align-tabs="center" class="my-4" color="secondary">
@@ -115,14 +115,14 @@ const dvthemedarkCode = `
           </p>
           <div id="hierarchy">
             <div class="foldercontainer text-lightText">
-              <span class="folder"><v-icon icon="mdi-palette-swatch-outline"></v-icon> styles</span>
+              <span class="folder"><icon-mdi-palette-swatch-outline /> styles</span>
               <span class="file"
                 >_container.scss <span class="mx-4">-------</span>
-                <span>Estilos aplicados al contenedor global de la aplicacion</span></span
+                <span>Estilos aplicados a los contenedores de la aplicacion</span></span
               >
               <span class="file"
                 >_override.scss <span class="mx-4">---------</span>
-                <span>Cambios en algunos estilos preestablecidos de Vuetify</span></span
+                <span>Cambios en estilos de componentes predefinidos de Vuetify</span></span
               >
               <span class="file"
                 >_sidebar.scss <span class="mx-4">----------</span>
@@ -130,7 +130,7 @@ const dvthemedarkCode = `
               >
               <span class="file"
                 >_variables.scss <span class="mx-4">--------</span>
-                <span>Definidión de variables y cambios en la fuente del proyecto</span></span
+                <span>Definición de variables y cambios en la fuente del proyecto</span></span
               >
               <span class="file"
                 >settings.scss <span class="mx-4">----------</span>

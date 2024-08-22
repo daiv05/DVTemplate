@@ -28,13 +28,15 @@ const props = defineProps({
             <v-breadcrumbs :items="props.breadcrumbs" class="text-h5 justify-md-end pa-1">
               <template #divider>
                 <div class="d-flex align-center">
-                  <v-icon size="17" icon="mdi-chevron-right"></v-icon>
+                  <icon-mdi-chevron-right />
                 </div>
               </template>
               <template #prepend>
-                <v-icon size="small" class="text-secondary mr-2" icon="mdi-home"></v-icon>
+                <router-link :to="{ name: 'inicio' }" class="align-center d-flex">
+                  <icon-mdi-home class="text-secondary mr-2" />
+                </router-link>
                 <div class="d-flex align-center">
-                  <v-icon size="17" icon="mdi-chevron-right"></v-icon>
+                  <icon-mdi-chevron-right />
                 </div>
               </template>
             </v-breadcrumbs>

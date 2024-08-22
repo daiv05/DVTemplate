@@ -1,6 +1,8 @@
 // Plugins
 import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
+import Icons from 'unplugin-icons/vite'
+import IconsResolver from 'unplugin-icons/resolver'
 import Unfonts from 'unplugin-fonts/vite'
 import Vue from '@vitejs/plugin-vue'
 import Vuetify, { transformAssetUrls } from 'vite-plugin-vuetify'
@@ -26,7 +28,13 @@ export default defineConfig({
         configFile: 'src/styles/settings.scss'
       }
     }),
-    Components(),
+    Components({
+      resolvers: [
+        IconsResolver({
+          prefix: 'icon'
+        })
+      ]
+    }),
     Unfonts({
       fontsource: {
         families: [
@@ -47,11 +55,17 @@ export default defineConfig({
     AutoImport({
       imports: ['vue', 'vue-router'],
       dirs: ['src/composables/*', 'src/services/*', 'src/stores/*'],
+      resolvers: [
+        IconsResolver({
+          prefix: 'icon'
+        })
+      ],
       eslintrc: {
         enabled: true
       },
       vueTemplate: true
-    })
+    }),
+    Icons()
   ],
   define: { 'process.env': {} },
   resolve: {

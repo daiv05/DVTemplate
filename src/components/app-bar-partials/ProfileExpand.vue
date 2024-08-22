@@ -16,6 +16,7 @@ const authStore = useAuthStore()
       element="span"
       :options="{ scrollbars: { autoHide: 'scroll' } }"
       defer
+      class="position-relative"
       style="height: calc(100vh - 300px); max-height: 515px"
     >
       <v-divider></v-divider>
@@ -29,10 +30,10 @@ const authStore = useAuthStore()
 
       <v-divider></v-divider>
 
-      <v-list class="mt-3">
+      <v-list class="bottom-0 right-0 position-absolute">
         <v-list-item color="secondary" rounded="md" @click="authStore.logout()">
           <template #prepend>
-            <v-icon size="20" class="mr-2" icon="mdi-logout"></v-icon>
+            <icon-mdi-logout class="ml mr-8" />
           </template>
           <v-list-item-title class="text-subtitle-2"> Logout</v-list-item-title>
         </v-list-item>

@@ -1,121 +1,126 @@
+// Sin unplugin-icons/unplugin-auto-import se tendrían que importar los iconos uno por uno:
+// import IconMdiAlertCircle from '~icons/mdi/alert-circle'
+// import IconMdiBellAlertOutline from '~icons/mdi/bell-alert-outline'
+// ...
+
 const sidebarItem = [
   {
     title: 'Inicio',
-    icon: 'mdi-home-account',
+    icon: IconMdiHomeAccount,
     to: '/inicio'
   },
   { divider: true },
   { header: 'Páginas' },
   {
     title: 'Autenticación',
-    icon: 'mdi-key-variant',
+    icon: IconMdiKeyVariant,
     children: [
       {
         title: 'Login',
-        icon: 'mdi-circle',
+        icon: IconMdiCircle,
         to: '/login'
       }
     ]
   },
   {
     title: 'Error 404',
-    icon: 'mdi-alert-circle',
+    icon: IconMdiAlertCircle,
     to: '/404'
   },
   { divider: true },
   { header: 'Utilidades' },
   {
     title: 'Temas y estilos',
-    icon: 'mdi-palette-swatch',
+    icon: IconMdiPaletteSwatch,
     to: '/utilidades/temas-y-estilos'
   },
   {
     title: 'Tipografía',
-    icon: 'mdi-format-letter-case-lower',
+    icon: IconMdiFormatLetterCaseLower,
     to: '/utilidades/tipografia'
   },
   {
     title: 'Colores',
-    icon: 'mdi-palette',
+    icon: IconMdiPalette,
     to: '/utilidades/colores'
   },
   {
     title: 'Iconos',
-    icon: 'mdi-emoticon-happy-outline',
+    icon: IconMdiEmoticonHappyOutline,
     children: [
       {
         title: 'Material Icons',
-        icon: 'mdi-circle',
+        icon: IconMdiCircle,
         to: '/utilidades/iconos/material'
       }
     ]
   },
   {
     title: 'Alertas',
-    icon: 'mdi-bell-alert-outline',
+    icon: IconMdiBellAlertOutline,
     to: '/utilidades/alertas'
   },
   {
     title: 'Suspense/Loader',
-    icon: 'mdi-reload',
+    icon: IconMdiReload,
     to: '/utilidades/loader'
   },
   {
     title: 'Services',
-    icon: 'mdi-lock-outline',
+    icon: IconMdiLockOutline,
     to: '/utilidades/services'
   },
   { divider: true },
   { header: 'Plugins' },
   {
     title: 'Axios',
-    icon: 'mdi-link-edit',
+    icon: IconMdiLinkEdit,
     to: '/plugins/axios'
   },
   {
     title: 'date-fns',
-    icon: 'mdi-clipboard-text-clock',
+    icon: IconMdiClipboardTextClock,
     to: '/plugins/date-fns'
   },
   {
     title: 'unplugin',
-    icon: 'mdi-toy-brick-plus',
+    icon: IconMdiToyBrickPlus,
     to: '/plugins/unplugin'
   },
   {
     title: 'VueUse',
-    icon: 'mdi-hand-coin',
+    icon: IconMdiHandCoin,
     to: '/plugins/vueuse'
   },
   {
     title: 'ESLint y Prettier',
-    icon: 'mdi-pretzel',
+    icon: IconMdiPretzel,
     to: '/plugins/eslint-prettier'
   },
   { divider: true },
   { header: 'Componentes' },
   {
     title: 'Vuetify Custom',
-    icon: 'mdi-folder-plus',
+    icon: IconMdiFolderPlus,
     children: [
       {
         title: 'Fecha y hora',
-        icon: 'mdi-circle',
+        icon: IconMdiCircle,
         to: '/componentes/fecha-y-hora'
       },
       {
         title: 'Modales',
-        icon: 'mdi-circle',
+        icon: IconMdiCircle,
         to: '/componentes/modales'
       },
       {
         title: 'Tablas',
-        icon: 'mdi-circle',
+        icon: IconMdiCircle,
         to: '/componentes/tablas'
       },
       {
         title: 'Paginación',
-        icon: 'mdi-circle',
+        icon: IconMdiCircle,
         to: '/componentes/paginacion'
       }
     ]

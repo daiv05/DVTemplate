@@ -3,37 +3,31 @@
     <v-row class="h-100 d-flex align-center">
       <v-col cols="12">
         <v-card elevation="3" rounded="md" class="mx-auto">
-          <v-card-title class="text-center">
-            <h3 class="my-8">404 Not Found</h3>
-            <v-icon class="mb-8" size="100">mdi-image-broken</v-icon>
+          <v-card-title class="text-center my-8" theme="DVThemeLigth">
+            <h3 class="text-h1">404 Not Found</h3>
+            <icon-mdi-image-broken class="gradient-svg" style="font-size: 200" />
           </v-card-title>
-          <v-card-text class="d-flex flex-column justify-center">
+          <v-card-text class="d-flex flex-column justify-center text-center">
+            <p class="text-subtitle-1 font-weight-bold">LA PÁGINA QUE ESTÁS BUSCANDO NO EXISTE</p>
             <p class="text-subtitle-2">
-              Es posible que la página que busca haya sido eliminada, haya cambiado de nombre o no
-              esté disponible temporalmente. Por favor, intente lo siguiente:
+              ES POSIBLE QUE LA PÁGINA HAYA SIDO ELIMINADA O QUE EL ENLACE ESTÉ ROTO
             </p>
-            <v-list lines="two">
-              <v-list-item>
-                <v-list-item-subtitle>
-                  - Si ha escrito la dirección de la página en la barra de direcciones, asegúrese de
-                  que está escrita correctamente.</v-list-item-subtitle
-                >
-              </v-list-item>
-              <v-list-item>
-                <v-list-item-subtitle>
-                  - Presione el botón <b>hacia atrás</b> o intente con otro link.
-                </v-list-item-subtitle>
-              </v-list-item>
-              <v-list-item>
-                <v-list-item-subtitle>
-                  - Regrese a la <a href="/">página de inicio</a>, y luego busque enlaces a la
-                  información que desee.
-                </v-list-item-subtitle>
-              </v-list-item>
-            </v-list>
+            <p class="text-subtitle-2">
+              <router-link :to="{ name: 'inicio' }" class="text-primary"
+                >Volver al inicio</router-link
+              >
+            </p>
           </v-card-text>
         </v-card>
       </v-col>
     </v-row>
   </v-container>
 </template>
+
+<style scoped lang="scss">
+// .gradient-svg {
+//   background-image: linear-gradient(to right, rgb(var(--v-theme-lightprimary)), rgb(var(--v-theme-secondary)));
+//   border-radius: 25px;
+//   box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+// }
+</style>

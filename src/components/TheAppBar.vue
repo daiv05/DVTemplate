@@ -21,7 +21,7 @@ const { toggleDrawer, toggleMiniSidebar } = useAppStore()
           size="x-small"
           @click.stop="toggleMiniSidebar"
         >
-          <v-icon size="18" stroke-width="1.5" icon="mdi-menu"></v-icon>
+          <icon-mdi-menu style="font-size: 14" />
         </v-btn>
       </template>
     </v-hover>
@@ -41,7 +41,7 @@ const { toggleDrawer, toggleMiniSidebar } = useAppStore()
           size="x-small"
           @click.stop="toggleDrawer"
         >
-          <v-icon size="18" stroke-width="1.5" icon="mdi-menu"></v-icon>
+          <icon-mdi-menu style="font-size: 14" />
         </v-btn>
       </template>
     </v-hover>
@@ -62,7 +62,7 @@ const { toggleDrawer, toggleMiniSidebar } = useAppStore()
               size="x-small"
               variant="flat"
             >
-              <v-icon size="18" icon="mdi-bell-alert-outline"></v-icon>
+              <icon-mdi-bell-alert-outline style="font-size: 15" />
             </v-btn>
           </template>
         </v-hover>
@@ -84,7 +84,7 @@ const { toggleDrawer, toggleMiniSidebar } = useAppStore()
           <v-avatar size="30" class="mr-2 py-2">
             <img src="@/assets/maki.svg" alt="Julia" />
           </v-avatar>
-          <v-icon size="25" stroke-width="1.5" icon="mdi-cog-outline"></v-icon>
+          <icon-mdi-cog-outline style="font-size: 20" />
         </v-btn>
       </template>
       <v-sheet rounded="lg" width="330" elevation="12">
@@ -99,6 +99,4 @@ const { toggleDrawer, toggleMiniSidebar } = useAppStore()
   height: 50px !important;
   margin: 0 20px 0 10px !important;
 }
-
-
 </style>

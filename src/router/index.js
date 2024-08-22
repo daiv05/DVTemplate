@@ -25,13 +25,14 @@ const router = createRouter({
           component: () => import('../pages/template-example/WelcomePage.vue')
         },
         ...routerUtilitiesPages,
-        ...routerPluginPages
+        ...routerPluginPages,
+
+        {
+          path: '/:pathMatch(.*)*',
+          name: 'not-found',
+          component: () => import('../pages/NotFound.vue')
+        }
       ]
-    },
-    {
-      path: '/:pathMatch(.*)*',
-      name: 'not-found',
-      component: () => import('../pages/NotFound.vue')
     }
   ],
   async scrollBehavior(to, from, savedPosition) {
@@ -43,7 +44,7 @@ const router = createRouter({
       return { el: to.hash, behavior: 'smooth' }
     } else {
       await delay(10)
-      return { top: 0, behavior: 'smooth', left: 0}
+      return { top: 0, behavior: 'smooth', left: 0 }
     }
   }
 })

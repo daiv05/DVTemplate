@@ -37,5 +37,5 @@ import { onErrorCaptured } from 'vue'
 const { miniSidebar } = storeToRefs(useAppStore())
 
 const errorCaptured = ref(null)
-onErrorCaptured((e) => (error.value = e))
+onErrorCaptured((e) => (e.value = e))
 </script>

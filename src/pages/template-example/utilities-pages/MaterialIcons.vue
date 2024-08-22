@@ -10,48 +10,39 @@ const breadcrumbs = ref([
     href: '#'
   }
 ])
-const codeIcons = ref(`<v-icon icon="mdi-palette-swatch-outline"></v-icon>`)
+
+const codeIcons = ref(
+  `<script setup>
+	import { mdiPaletteSwatchOutline } from '@mdi/js'
+<\/script>
+
+<template>
+	<v-icon :icon="mdiPaletteSwatchOutline"></v-icon>
+</template>
+`
+)
+
 const iconExamples = shallowRef([
-  {
-    icon: 'mdi-palette-swatch-outline',
-    title: 'mdi-palette-swatch-outline'
-  },
-  {
-    icon: 'mdi-palette-swatch',
-    title: 'mdi-palette-swatch'
-  },
-  {
-    icon: 'mdi-palette',
-    title: 'mdi-palette'
-  },
-  {
-    icon: 'mdi-palette-advanced',
-    title: 'mdi-palette-advanced'
-  },
-  {
-    icon: 'mdi-palette-outline',
-    title: 'mdi-palette-outline'
-  },
-  {
-    icon: 'mdi-palette-swatch-outline',
-    title: 'mdi-palette-swatch-outline'
-  },
-  {
-    icon: 'mdi-palette-swatch',
-    title: 'mdi-palette-swatch'
-  },
-  {
-    icon: 'mdi-palette',
-    title: 'mdi-palette'
-  },
-  {
-    icon: 'mdi-palette-advanced',
-    title: 'mdi-palette-advanced'
-  },
-  {
-    icon: 'mdi-palette-outline',
-    title: 'mdi-palette-outline'
-  }
+  // {
+  //   icon: mdiPaletteSwatchOutline,
+  //   title: '<icon-mdi-palette-swatch-outline />'
+  // },
+  // {
+  //   icon: mdiPaletteSwatch,
+  //   title: '<icon-mdi-palette-swatch />'
+  // },
+  // {
+  //   icon: mdiPalette,
+  //   title: '<icon-mdi-palette />'
+  // },
+  // {
+  //   icon: mdiPaletteOutline,
+  //   title: '<icon-mdi-palette-outline />'
+  // },
+  // {
+  //   icon: mdiPaletteAdvanced,
+  //   title: '<icon-mdi-palette-advanced />'
+  // }
 ])
 </script>
 <template>
@@ -66,28 +57,20 @@ const iconExamples = shallowRef([
                 Vuetify incluye Material Design Icons. Puedes encontrar la lista completa de iconos
                 en la página oficial de
                 <a
-                  href="https://vuetifyjs.com/en/components/icons/"
+                  href="https://pictogrammers.com/library/mdi/"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Material Symbol & Icons</a
+                  Pictogrammers</a
                 >. En la
                 <a
                   href="https://vuetifyjs.com/en/components/icons/"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  documentación oficial de Vuetify </a
+                  documentación oficial de Vuetify</a
                 >, puedes encontrar la lista de iconos disponibles, más información sobre cómo
-                utilizarlos o agregar otras fuentes. <br> Otra fuente de consulta (recomendada) de estos
-                iconos es
-                <a
-                  href="https://pictogrammers.com/library/mdi/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  pictogrammers
-                </a>
+                utilizarlos o agregar otras fuentes. <br />
               </p>
               <p>El uso basico de los iconos es el siguiente:</p>
               <highlightjs language="html" :code="codeIcons" :autodetect="false" />
@@ -103,8 +86,8 @@ const iconExamples = shallowRef([
                         height="100"
                       >
                         <v-card-text class="pt-4">
-                          <v-icon size="50">{{ icon.icon }}</v-icon>
-                          <span class="text-body-2 font-weight-bold">{{ icon.title }}</span>
+                          <component :is="icon.icon" style="font-size: 40px" />
+                          <p class="text-body-2 font-weight-bold ma-2">{{ icon.title }}</p>
                         </v-card-text>
                       </v-card>
                     </v-col>

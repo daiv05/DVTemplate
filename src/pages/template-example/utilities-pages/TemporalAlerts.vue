@@ -115,10 +115,10 @@ const breadcrumbs = ref([
               </v-row>
               <v-row class="ma-2">
                 <v-col cols="12" class="d-flex justify-center flex-wrap ga-2">
-                  <v-btn elevation="0" @click="alert('success')" color="success">Success</v-btn>
-                  <v-btn elevation="0" @click="alert('info')" color="info">Default (info)</v-btn>
-                  <v-btn elevation="0" @click="alert('warn')" color="warning">Warning</v-btn>
-                  <v-btn elevation="0" @click="alert('error')" color="error">Error</v-btn>
+                  <v-btn elevation="0" color="success" @click="alert('success')">Success</v-btn>
+                  <v-btn elevation="0" color="info" @click="alert('info')">Default (info)</v-btn>
+                  <v-btn elevation="0" color="warning" @click="alert('warn')">Warning</v-btn>
+                  <v-btn elevation="0" color="error" @click="alert('error')">Error</v-btn>
                 </v-col>
               </v-row>
               <p>La función alertToast recibe un objeto con las siguientes propiedades:</p>
@@ -168,7 +168,7 @@ const breadcrumbs = ref([
                 :autodetect="false"
               ></highlightjs>
               <p class="my-2">
-                Puedes agregar mas componentes de <code>notifications</code> con distintas
+                Puedes agregar mas elementos de <code>notifications</code> con distintas
                 configuraciones, como posicion, velocidad o duración, y asignarle un
                 <code>group</code> distinto. Por ejemplo, si quieres que las alertas del sistema se
                 muestren en la posición 'top center', y los errores del servidor en la posición
@@ -176,8 +176,8 @@ const breadcrumbs = ref([
               </p>
               <highlightjs :code="codeNotiGroups" language="html" :autodetect="false"></highlightjs>
               <p class="my-2">
-                Y para definir donde quieres que se muestre una alerta en específico se debe agregar la
-                propiedad 'group' al objeto:
+                Y para definir donde quieres que se muestre una alerta en específico se debe agregar
+                la propiedad 'group' al objeto:
               </p>
               <highlightjs
                 :code="codeExampleGroup"
@@ -185,8 +185,8 @@ const breadcrumbs = ref([
                 :autodetect="false"
               ></highlightjs>
               <v-col cols="12" class="d-flex justify-center flex-wrap ga-2">
-                <v-btn elevation="0" @click="alert('success')" color="success">Web</v-btn>
-                <v-btn elevation="0" @click="alertServer('error')" color="error">Server</v-btn>
+                <v-btn elevation="0" color="success" @click="alert('success')">Web</v-btn>
+                <v-btn elevation="0" color="error" @click="alertServer('error')">Server</v-btn>
               </v-col>
             </v-col>
           </v-row>

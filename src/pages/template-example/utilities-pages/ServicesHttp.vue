@@ -18,8 +18,8 @@ const breadcrumbs = ref([
       <v-col cols="12">
         <AppBaseCard title="Services">
           <p>
-            Para realizar peticiones se recomienda utilizar la carpeta <code>/src/services</code> como repositorio
-            común de endpoints
+            Para realizar peticiones se recomienda utilizar la carpeta
+            <code>/src/services</code> como repositorio común de endpoints
           </p>
         </AppBaseCard>
       </v-col>
