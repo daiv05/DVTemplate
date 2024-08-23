@@ -26,8 +26,8 @@ export const useAuthStore = defineStore('auth', () => {
     router.push({ name: 'inicio' })
     setLoading(false)
     alertToast({
-      title: 'Login',
-      message: 'Login success',
+      title: 'Bienvenido!',
+      message: 'Inicio de sesión exitoso',
       type: 'success'
     })
   }
@@ -38,8 +38,8 @@ export const useAuthStore = defineStore('auth', () => {
     refreshToken.value = null
     router.push('/login')
     alertToast({
-      title: 'Logout',
-      message: 'Logout success',
+      title: 'Nos vemos!',
+      message: 'Cierre de sesión exitoso',
       type: 'success'
     })
   }

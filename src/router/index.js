@@ -10,15 +10,15 @@ const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
-      path: '/login',
-      name: 'login',
-      component: () => import('../pages/LoginView.vue')
-    },
-    {
       path: '/',
       name: 'dashboard',
       component: () => import('../layouts/DashboardLayout.vue'),
       children: [
+        {
+          path: '/login',
+          name: 'login',
+          component: () => import('../pages/LoginView.vue')
+        },
         {
           path: '/inicio',
           name: 'inicio',
@@ -26,7 +26,6 @@ const router = createRouter({
         },
         ...routerUtilitiesPages,
         ...routerPluginPages,
-
         {
           path: '/:pathMatch(.*)*',
           name: 'not-found',
@@ -53,6 +52,10 @@ router.beforeEach(async (to) => {
   const publicPages = ['/login', '/']
   const authRequired = !publicPages.includes(to.path)
   const auth = useAuthStore()
+
+  if (to.path === '/') {
+    return '/inicio'
+  }
 
   if (authRequired && !auth.user) {
     auth.returnUrl = to.fullPath

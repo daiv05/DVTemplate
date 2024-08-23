@@ -36,8 +36,10 @@ const props = defineProps({
         class="sidebarchip hide-menu"
         :size="item.chipIcon ? 'small' : 'default'"
         :variant="item.chipVariant"
-        :prepend-icon="item.chipIcon"
       >
+        <template v-if="item.chipIcon">
+          <component :is="item.chipIcon" class="mr-1"></component>
+        </template>
         {{ item.chip }}
       </v-chip>
     </template>

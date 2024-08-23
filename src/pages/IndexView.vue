@@ -21,7 +21,7 @@ const loadCats = async () => {
     })
   }
   if (error) {
-    console.log('Error: ', error)
+    console.error('Error: ', error)
   }
 }
 const loadAnimals = async () => {
@@ -34,9 +34,9 @@ const loadAnimals = async () => {
     })
   }
   if (error) {
-    console.log('Error: ', error)
+    console.error('Error: ', error)
   }
 }
 
-// await Promise.all([loadCats(), loadAnimals()])
+await Promise.all([loadCats(), loadAnimals()])
 </script>

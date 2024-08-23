@@ -15,8 +15,8 @@ export default [
     component: () => import('./ColorThemes.vue')
   },
   {
-    path: '/utilidades/iconos/material',
-    name: 'material-icons',
+    path: '/utilidades/iconos/mdi',
+    name: 'mdi-icons',
     component: () => import('./MaterialIcons.vue')
   },
   {

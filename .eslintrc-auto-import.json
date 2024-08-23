@@ -133,6 +133,10 @@
     "IconMdiPalette": true,
     "IconMdiPretzel": true,
     "IconMdiReload": true,
-    "IconMdiToyBrickPlus": true
+    "IconMdiToyBrickPlus": true,
+    "IconMdiPaletteAdvanced": true,
+    "IconMdiPaletteOutline": true,
+    "IconMdiStar": true,
+    "IconMdiNavigationOutline": true
   }
 }

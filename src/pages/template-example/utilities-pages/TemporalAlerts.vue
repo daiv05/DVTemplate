@@ -21,7 +21,17 @@ const alertServer = (type) => {
   })
 }
 
-const codeExample = `  const alertToast = inject('alertToast')
+const alertWeb = (type) => {
+  alertToast({
+    title: 'Notificación de sistema',
+    text: 'Este es un mensaje de tipo: ' + type,
+    type: type
+  })
+}
+
+const codeExample = `  // Puedes utilizar la función alertToast en cualquier componente
+  const alertToast = inject('alertToast')
+  // Para mostrar una notificación, solo debes llamar a la función
   alertToast({
     title: 'Notificación',
     text: 'Esta es una alerta de tipo: success',
@@ -159,8 +169,8 @@ const breadcrumbs = ref([
                 </v-list-item>
               </v-list>
               <p class="my-2">
-                Algunas de estas y otras opciones pueden modificarse desde el componente, disponible
-                en <code>App.vue</code>
+                Algunas de estas y otras opciones pueden modificarse como atributos del elemento,
+                disponible en <code>App.vue</code>
               </p>
               <highlightjs
                 :code="codeNotiComponent"
@@ -169,10 +179,10 @@ const breadcrumbs = ref([
               ></highlightjs>
               <p class="my-2">
                 Puedes agregar mas elementos de <code>notifications</code> con distintas
-                configuraciones, como posicion, velocidad o duración, y asignarle un
-                <code>group</code> distinto. Por ejemplo, si quieres que las alertas del sistema se
-                muestren en la posición 'top center', y los errores del servidor en la posición
-                'bottom left':
+                configuraciones, como posición, velocidad o duración, y asignarle un
+                <code>group</code> distinto a cada uno. Por ejemplo, si quieres que las alertas del
+                sistema se muestren en la posición 'top center', y los errores del servidor en la
+                posición 'bottom left':
               </p>
               <highlightjs :code="codeNotiGroups" language="html" :autodetect="false"></highlightjs>
               <p class="my-2">
@@ -185,7 +195,7 @@ const breadcrumbs = ref([
                 :autodetect="false"
               ></highlightjs>
               <v-col cols="12" class="d-flex justify-center flex-wrap ga-2">
-                <v-btn elevation="0" color="success" @click="alert('success')">Web</v-btn>
+                <v-btn elevation="0" color="success" @click="alertWeb('success')">Web</v-btn>
                 <v-btn elevation="0" color="error" @click="alertServer('error')">Server</v-btn>
               </v-col>
             </v-col>

@@ -11,7 +11,9 @@ const props = defineProps({
   <v-card variant="flat" class="rounded-lg max-wch pb-4">
     <v-card-item class="d-flex justify-center">
       <div class="d-sm-flex align-center max-wch-base-card">
-        <v-card-title class="text-center">{{ props.title }}</v-card-title>
+        <slot name="title">
+          <v-card-title class="text-h5 font-weight-bold">{{ title }}</v-card-title>
+        </slot>
       </div>
     </v-card-item>
     <v-divider></v-divider>

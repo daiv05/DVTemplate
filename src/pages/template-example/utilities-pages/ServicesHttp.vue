@@ -1,6 +1,5 @@
 <script setup>
 import AppBaseCard from '@/components/AppBaseCard.vue'
-import { shallowRef } from 'vue'
 
 const page = ref({ title: 'Services' })
 const breadcrumbs = ref([

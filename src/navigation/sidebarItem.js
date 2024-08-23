@@ -1,4 +1,5 @@
-// Sin unplugin-icons/unplugin-auto-import se tendrían que importar los iconos uno por uno:
+// Sin el uso de unplugin-icons/unplugin-auto-import se tendrían
+// que importar los iconos uno por uno:
 // import IconMdiAlertCircle from '~icons/mdi/alert-circle'
 // import IconMdiBellAlertOutline from '~icons/mdi/bell-alert-outline'
 // ...
@@ -7,6 +8,10 @@ const sidebarItem = [
   {
     title: 'Inicio',
     icon: IconMdiHomeAccount,
+    // chip: 'Nuevo',
+    // chipColor: 'primary',
+    // chipIcon: IconMdiStar,
+    // chipVariant: 'flat',
     to: '/inicio'
   },
   { divider: true },
@@ -49,9 +54,9 @@ const sidebarItem = [
     icon: IconMdiEmoticonHappyOutline,
     children: [
       {
-        title: 'Material Icons',
+        title: 'MDI',
         icon: IconMdiCircle,
-        to: '/utilidades/iconos/material'
+        to: '/utilidades/iconos/mdi'
       }
     ]
   },
@@ -69,6 +74,11 @@ const sidebarItem = [
     title: 'Services',
     icon: IconMdiLockOutline,
     to: '/utilidades/services'
+  },
+  {
+    title: 'Barra de navegación',
+    icon: IconMdiNavigationOutline,
+    to: '/utilidades/sidebar'
   },
   { divider: true },
   { header: 'Plugins' },

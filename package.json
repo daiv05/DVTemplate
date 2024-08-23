@@ -32,7 +32,6 @@
   },
   "devDependencies": {
     "@iconify-json/mdi": "^1.1.68",
-    "@mdi/js": "^7.4.47",
     "@vitejs/plugin-vue": "^5.1.2",
     "eslint": "^9.9.0",
     "eslint-config-prettier": "^9.1.0",

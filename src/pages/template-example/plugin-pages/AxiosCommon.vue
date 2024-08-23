@@ -172,15 +172,17 @@ const statusCodes = shallowRef([
           </v-timeline>
           <p>Cualquier otro código de estado no listado, mostrará un mensaje de error genérico.</p>
           <v-alert
+            border="start"
+            color="secondary"
+            variant="tonal"
             class="my-4"
             type="info"
-            variant="tonal"
             text="El flujo para el refresh token se maneja en el response interceptor, si el servidor
             responde con un código de estado 401, se intenta refrescar el token y se reenvía la
             solicitud original. En caso de que el refresh token haya expirado, u ocurra un error en el
             proceso, se redirige al usuario a la página de login."
             title="Refresh Token"
-          ></v-alert>
+          />
           <p>
             El archivo de AxiosCommon (<code>src/axiosCommon.js</code>), es el encargado de llamar a
             la instancia de Axios y manejar las respuestas y errores devueltos de forma global.
