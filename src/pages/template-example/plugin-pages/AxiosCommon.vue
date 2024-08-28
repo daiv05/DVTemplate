@@ -11,7 +11,8 @@ const breadcrumbs = ref([
   }
 ])
 const axiosHttp = shallowRef(
-  `  await _axios(config)
+  `  // src/axiosCommon.js
+  await _axios(config)
     .then((res) => {
       response = res.data
       status = res.status
@@ -85,12 +86,11 @@ const statusCodes = shallowRef([
     <AppBreadcrumb :title="page.title" :breadcrumbs="breadcrumbs"></AppBreadcrumb>
     <v-row>
       <v-col cols="12">
-        <AppBaseCard title="AxiosCommon">
+        <AppBaseCard title="Axios">
           <p>
-            Axios es un cliente HTTP basado en promesas para el navegador y Node.js. Axios hace que
-            sea fácil enviar solicitudes HTTP desde el navegador. Como parte de la configuración de
-            Axios, en <code>src/plugins/axios.js</code>, se ha definido una configuración común para
-            todas las solicitudes. La configuración incluye:
+            Axios es un cliente HTTP basado en promesas para el navegador y Node.js. En
+            <code>src/plugins/axios.js</code>, se ha definido una lógica común para todas las
+            solicitudes. La configuración incluye:
           </p>
           <v-list lines>
             <v-list-item>
@@ -149,10 +149,11 @@ const statusCodes = shallowRef([
             </v-list-item>
           </v-list>
           <p>
-            Para las respuestas con error, se muestra una alerta temporal con el mensaje de error,
-            por defecto se espera: <code>response.data.message</code>, pero puedes customizar o
-            agregar según la estructura del mensaje de error que esperas recibir. Por defecto son
-            manejados los siguientes códigos de estado:
+            Para las respuestas con error, se muestra una alerta temporal con un mensaje de error,
+            por defecto se espera que la petición devuelva:
+            <code>error.response.data.message</code>, pero puedes customizar o agregar según la
+            estructura del mensaje de error que esperas recibir. Por defecto son manejados los
+            siguientes códigos de estado:
           </p>
           <v-timeline align="start" side="end">
             <v-timeline-item
@@ -184,10 +185,18 @@ const statusCodes = shallowRef([
             title="Refresh Token"
           />
           <p>
-            El archivo de AxiosCommon (<code>src/axiosCommon.js</code>), es el encargado de llamar a
-            la instancia de Axios y manejar las respuestas y errores devueltos de forma global.
+            Como estándar para esta plantilla, se recomienda utilizar AxiosCommon
+            (<code>src/axiosCommon.js</code>) como encargado de llamar a está instancia de Axios y
+            manejar las respuestas y errores. Utiliza AxiosCommon en los services de tu aplicación.
+            Puedes ver más sobre como realizar peticiones HTTP en la sección
+            <router-link :to="{ name: 'services-http' }">Services</router-link>.
           </p>
           <highlightjs :code="axiosHttp" language="javascript" :autodetect="false"></highlightjs>
+          <p class="my-4">
+            De cualquier forma, si lo necesitas puedes importar <code>_axios</code> desde
+            <code>src/plugins/axios.js</code> o <code>axios</code> directamente desde la librería y
+            utilizarlo como prefieras.
+          </p>
         </AppBaseCard>
       </v-col>
     </v-row>

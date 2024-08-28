@@ -20,7 +20,7 @@
             <h4 class="mt-2">Versiones</h4>
           </v-card-title>
           <v-card-text>
-            <v-list variant="flat" density="compact">
+            <v-list variant="flat" density="compact" lines>
               <v-list-item>
                 <icon-mdi-circle style="font-size: 4" />
                 <strong class="ml-2">Vue.js:</strong> 3.4.33

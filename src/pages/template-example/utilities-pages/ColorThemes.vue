@@ -3,6 +3,8 @@ import AppBaseCard from '@/components/AppBaseCard.vue'
 import { computed, inject, shallowRef } from 'vue'
 import { DVLightTheme, DVDarkTheme } from '@/themes/dv.theme'
 
+const alertToast = inject('alertToast')
+
 const tab = ref(1)
 const page = ref({ title: 'Colores' })
 const breadcrumbs = ref([
@@ -12,24 +14,37 @@ const breadcrumbs = ref([
     href: '#'
   }
 ])
-
+const colorNotification = ref('#187fe7')
 const lightColorsArrays = shallowRef(DVLightTheme.colors)
 const darkColorsArrays = shallowRef(DVDarkTheme.colors)
 
-const alertToast = inject('alertToast')
+const isLongPress = ref(false)
 
 const copyColor = (color) => {
+  if (isLongPress.value) {
+    isLongPress.value = false
+    return
+  }
   navigator.clipboard.writeText(color)
-  colorNotification.value = color
+  colorNotification.value = `rgb(var(--v-theme-${color}))`
   alertToast({
-    title: 'Color copiado!',
+    title: 'COLOR copiado!',
     text: color,
     group: 'colors-copy'
   })
 }
 
-// Color de notificación
-const colorNotification = ref('#187fe7')
+const longCopyColor = (colorHex) => {
+  isLongPress.value = true
+  navigator.clipboard.writeText(colorHex)
+  colorNotification.value = colorHex
+  alertToast({
+    title: 'HEX copiado!',
+    text: colorHex,
+    group: 'colors-copy'
+  })
+}
+
 const cssProps = computed(() => {
   return {
     // '--background-notification': `rgba(${colorNotification.value}, 0.8)`,
@@ -46,6 +61,12 @@ const cssProps = computed(() => {
     <v-row>
       <v-col cols="12">
         <AppBaseCard title="Paletas de colores">
+          <p class="mt-2">
+            Los componentes suelen tener un atributo 'color' donde puedes utilizar estos colores, o
+            bien, como una clase: bg-[nombre-color], pero también puedes utilizarlos como una
+            variable css: --v-theme-[nombre-color]. <br />
+            Ejemplo: background: var(--v-theme-primary)"
+          </p>
           <v-alert
             color="secondary"
             border="start"
@@ -55,18 +76,14 @@ const cssProps = computed(() => {
             title="TIP"
           >
             <template #text>
-              Los componentes suelen tener un atributo 'color' donde puedes utilizar estos colores,
-              o bien, como una clase: bg-[nombre-color], pero también puedes utilizarlos como una
-              variable css: --v-theme-[nombre-color]. <br />
-              Ejemplo: background: var(--v-theme-primary)"
+              Toca un card para copiar el color al portapapeles. <br />
+              Mantén presionado para copiarlo en formato HEX.
             </template>
           </v-alert>
-
           <v-tabs v-model="tab" align-tabs="center" class="my-4" color="secondary">
             <v-tab :value="1">DVTheme Light</v-tab>
             <v-tab :value="2">DVTheme Dark</v-tab>
           </v-tabs>
-
           <v-tabs-window v-model="tab">
             <v-tabs-window-item :value="1" class="pa-0">
               <v-row class="d-flex justify-center flex-wrap ga-1">
@@ -78,7 +95,8 @@ const cssProps = computed(() => {
                     theme="DVLightTheme"
                     max-width="300"
                     height="100"
-                    @click="copyColor(color)"
+                    @click.prevent="copyColor(i)"
+                    v-longpress="{ fn: longCopyColor, data: [color] }"
                   >
                     <v-card-text class="pt-4">
                       <span class="text-body-2 font-weight-bold">{{ i }}</span>
@@ -97,7 +115,8 @@ const cssProps = computed(() => {
                     theme="DVDarkTheme"
                     max-width="300"
                     height="100"
-                    @click="copyColor(color)"
+                    @click="copyColor(i)"
+                    v-longpress="{ fn: longCopyColor, data: [color] }"
                   >
                     <v-card-text class="pt-4">
                       <span class="text-body-2 font-weight-bold">{{ i }}</span>

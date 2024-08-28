@@ -129,7 +129,7 @@ const iconExamples = shallowRef([
                     >
                   </v-list-item>
                 </v-list>
-                Los iconos también pueden asignarse a una variable, para luego, si se necesita
+                Los iconos también pueden asignarse a una variable, para luego, si se necesita,
                 utilizar el valor en un template con
                 <code>&lt;component&gt;</code>
               </p>

@@ -62,14 +62,13 @@ const errorCaptured = shallowRef(
 import { onErrorCaptured } from 'vue'
 const error = ref([])
 try {
-  onErrorCaptured((e) => {
-    console.error(e, 'errorCaptured')
-    error.value.push({
-      message: e
+  onErrorCaptured((error) => {
+    errorCaptured.value.push({
+      error
     })
-    // Devolviendo false evitamos que
-    // el error se siga propagando
-    return false
+    // Tambien se puede devolver false
+    // para evitar que el error se siga propagando
+    return true
   })
 } catch (e) {
   console.error(e, 'error')
@@ -102,7 +101,7 @@ const hideLoader = () => {
         <AppBaseCard title="Suspense/Loader">
           <p>
             La plantilla incluye un componente llamado <code>AppLoader.vue</code>, que se puede
-            utilizar para mostrar una pantalla de carga en la aplicación. Se utiliza en conjunto con
+            utilizar para mostrar una pantalla de carga en la aplicación. Es utilizado en conjunto con
             <code>Suspense</code> (nativo de Vue 3) para mostrar un loader mientras se termina de
             cargar todas las dependencias asíncronas anidadas en el árbol de componentes cuando se
             navega entre rutas.
@@ -121,7 +120,7 @@ const hideLoader = () => {
             El componente <code>Suspense</code> se utiliza para envolver el contenido al que se le
             está aplicando la lógica de carga, en este caso, el componente que va a renderizar en
             el RouterView. <br />
-            Se agrega un componente más como fallback, mientras se termina de cargar el contenido
+            Se agrega un componente más como fallback: mientras se termina de cargar el contenido
             será esto lo que se visualice.
           </p>
           <highlightjs :code="suspenseCode" language="html" :autodetect="false"></highlightjs>
@@ -133,8 +132,8 @@ const hideLoader = () => {
           <highlightjs :code="errorCaptured" language="html" :autodetect="false"></highlightjs>
           <p class="my-4">
             Como se observa en el código, se utiliza el hook <code>onErrorCaptured</code> para
-            capturar los errores y mostrar una card personalizada en caso de que algo falle. Al
-            devolver <code>false</code> evitamos que el error se siga propagando, lo que
+            capturar los errores y mostrar una card personalizada en caso de que algo falle. Si
+            se retornara <code>false</code> evitaría que el error se siga propagando, lo que
             esencialmente significa que «este error ha sido manejado y debe ser ignorado» <br />
             Puedes leer más sobre <code>onErrorCaptured</code> en
             <a
