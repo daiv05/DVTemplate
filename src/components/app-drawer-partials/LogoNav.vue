@@ -7,5 +7,5 @@
 </template>
 <script setup>
 import { RouterLink } from 'vue-router'
-import maki from '@/assets/maki.svg'
+import maki from '@/assets/icons/maki.svg'
 </script>

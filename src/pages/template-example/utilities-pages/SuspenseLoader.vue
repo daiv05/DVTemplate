@@ -101,10 +101,10 @@ const hideLoader = () => {
         <AppBaseCard title="Suspense/Loader">
           <p>
             La plantilla incluye un componente llamado <code>AppLoader.vue</code>, que se puede
-            utilizar para mostrar una pantalla de carga en la aplicación. Es utilizado en conjunto con
-            <code>Suspense</code> (nativo de Vue 3) para mostrar un loader mientras se termina de
-            cargar todas las dependencias asíncronas anidadas en el árbol de componentes cuando se
-            navega entre rutas.
+            utilizar para mostrar una pantalla de carga en la aplicación. Es utilizado en conjunto
+            con <code>Suspense</code> (nativo de Vue 3) para mostrar un loader mientras se termina
+            de cargar todas las dependencias asíncronas anidadas en el árbol de componentes cuando
+            se navega entre rutas.
           </p>
           <v-alert
             border="start"
@@ -118,23 +118,23 @@ const hideLoader = () => {
           />
           <p>
             El componente <code>Suspense</code> se utiliza para envolver el contenido al que se le
-            está aplicando la lógica de carga, en este caso, el componente que va a renderizar en
-            el RouterView. <br />
+            está aplicando la lógica de carga, en este caso, el componente que va a renderizar el
+            RouterView. <br />
             Se agrega un componente más como fallback: mientras se termina de cargar el contenido
             será esto lo que se visualice.
           </p>
           <highlightjs :code="suspenseCode" language="html" :autodetect="false"></highlightjs>
           <p class="my-4">
-            <code>Suspense</code> también nos permite manejar errores, en caso de que una promesa
-            sea rechazada, una petición, o en general si algo falla, podemos mostrar un mensaje o
-            componente de error y evitar que la aplicación se rompa.
+            <code>Suspense</code> también nos permite manejar errores, en caso de una promesa
+            rechazada sin manejar, una petición, o en general si algo inesperado falla, podemos
+            mostrar un mensaje o componente de error y evitar que la aplicación se rompa.
           </p>
           <highlightjs :code="errorCaptured" language="html" :autodetect="false"></highlightjs>
           <p class="my-4">
             Como se observa en el código, se utiliza el hook <code>onErrorCaptured</code> para
-            capturar los errores y mostrar una card personalizada en caso de que algo falle. Si
-            se retornara <code>false</code> evitaría que el error se siga propagando, lo que
-            esencialmente significa que «este error ha sido manejado y debe ser ignorado» <br />
+            capturar los errores y mostrar una card personalizada con el detalle. Si se retornara
+            <code>false</code> evitaría que el error se siga propagando, lo que esencialmente
+            significa que «este error ha sido manejado y debe ser ignorado» <br />
             Puedes leer más sobre <code>onErrorCaptured</code> en
             <a
               href="https://vuejs.org/api/composition-api-lifecycle.html#onerrorcaptured"

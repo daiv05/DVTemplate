@@ -20,16 +20,16 @@ const darkColorsArrays = shallowRef(DVDarkTheme.colors)
 
 const isLongPress = ref(false)
 
-const copyColor = (color) => {
+const copyColor = (colorHex, i) => {
   if (isLongPress.value) {
     isLongPress.value = false
     return
   }
-  navigator.clipboard.writeText(color)
-  colorNotification.value = `rgb(var(--v-theme-${color}))`
+  navigator.clipboard.writeText(i)
+  colorNotification.value = colorHex
   alertToast({
     title: 'COLOR copiado!',
-    text: color,
+    text: i,
     group: 'colors-copy'
   })
 }
@@ -55,7 +55,7 @@ const cssProps = computed(() => {
 <template>
   <div>
     <div :style="cssProps">
-      <notifications classes="dv-notification" position="top center" group="colors-copy" :max="1" />
+      <notifications classes="color-themes-notification" position="top center" group="colors-copy" :max="1" />
     </div>
     <AppBreadcrumb :title="page.title" :breadcrumbs="breadcrumbs"></AppBreadcrumb>
     <v-row>
@@ -76,8 +76,8 @@ const cssProps = computed(() => {
             title="TIP"
           >
             <template #text>
-              Toca un card para copiar el color al portapapeles. <br />
-              Mantén presionado para copiarlo en formato HEX.
+              Toca una tarjeta para copiar el nombre del color al portapapeles. <br />
+              Mantén presionado para copiar su valor (hex, rgb, rgba, etc).
             </template>
           </v-alert>
           <v-tabs v-model="tab" align-tabs="center" class="my-4" color="secondary">
@@ -95,7 +95,7 @@ const cssProps = computed(() => {
                     theme="DVLightTheme"
                     max-width="300"
                     height="100"
-                    @click.prevent="copyColor(i)"
+                    @click.prevent="copyColor(color, i)"
                     v-longpress="{ fn: longCopyColor, data: [color] }"
                   >
                     <v-card-text class="pt-4">
@@ -115,7 +115,7 @@ const cssProps = computed(() => {
                     theme="DVDarkTheme"
                     max-width="300"
                     height="100"
-                    @click="copyColor(i)"
+                    @click="copyColor(color, i)"
                     v-longpress="{ fn: longCopyColor, data: [color] }"
                   >
                     <v-card-text class="pt-4">
@@ -133,7 +133,7 @@ const cssProps = computed(() => {
 </template>
 
 <style scoped lang="scss">
-:deep(.dv-notification) {
+:deep(.color-themes-notification) {
   margin: 0 5px 5px;
   padding: 10px;
   font-size: 12px;

@@ -48,7 +48,7 @@ const DVDarkTheme = {
     accent: '#FFAB91',
     warning: '#ffc107',
     error: '#f44336',
-    lightprimary: '#BAADCC',
+    lightprimary: '#E5DEEE',
     lightsecondary: '#52456A',
     lightsuccess: '#57B07E',
     lighterror: '#A64949',

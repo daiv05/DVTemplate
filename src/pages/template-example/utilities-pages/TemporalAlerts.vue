@@ -86,6 +86,8 @@ const breadcrumbs = ref([
 </script>
 <template>
   <div>
+    <notifications position="bottom left" group="info-dv" :max="3" />
+
     <AppBreadcrumb :title="page.title" :breadcrumbs="breadcrumbs"></AppBreadcrumb>
     <v-row>
       <v-col cols="12">
@@ -97,8 +99,7 @@ const breadcrumbs = ref([
                 <a href="https://github.com/kyvg/vue3-notification" target="_blank"
                   >vue3-notification</a
                 >
-                para mostrar alertas temporales en la aplicación. Puedes preconfigurar las alertas
-                por defecto, en
+                para mostrar alertas temporales. Puedes preconfigurar las alertas por defecto, en
                 <code>src\plugins\notification.js</code>
               </p>
               <v-row>

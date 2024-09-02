@@ -20,6 +20,7 @@
   "dependencies": {
     "@fontsource-variable/montserrat": "^5.0.19",
     "@highlightjs/vue-plugin": "^2.1.0",
+    "@iconify/utils": "^2.1.32",
     "@kyvg/vue3-notification": "^3.2.1",
     "@vueuse/core": "^10.11.1",
     "axios": "^1.7.4",
@@ -28,7 +29,7 @@
     "luxon": "^3.5.0",
     "overlayscrollbars-vue": "^0.5.9",
     "vue": "^3.4.37",
-    "vuetify": "^3.7.0"
+    "vuetify": "^3.7.1"
   },
   "devDependencies": {
     "@iconify-json/mdi": "^1.1.68",

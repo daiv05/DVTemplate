@@ -11,7 +11,7 @@ const breadcrumbs = ref([
   }
 ])
 const axiosHttp = shallowRef(
-  `  // src/axiosCommon.js
+  `  // src/utils/http/axios-common.js
   await _axios(config)
     .then((res) => {
       response = res.data
@@ -64,7 +64,7 @@ const statusCodes = shallowRef([
     code: '418',
     title: "I'm a teapot",
     description:
-      'Este código es devuelto por las teteras que reciben solicitudes para preparar café.',
+      'El servidor se rehúsa a preparar café porque es una tetera',
     color: 'yellow-darken-1'
   },
   {
@@ -149,10 +149,12 @@ const statusCodes = shallowRef([
             </v-list-item>
           </v-list>
           <p>
-            Para las respuestas con error, se muestra una alerta temporal con un mensaje de error,
-            por defecto se espera que la petición devuelva:
-            <code>error.response.data.message</code>, pero puedes customizar o agregar según la
-            estructura del mensaje de error que esperas recibir. Por defecto son manejados los
+            Para las respuestas con error, se muestra una alerta temporal con un mensaje.
+            Por defecto se espera que la petición devuelva:
+            <code>error.response.data.message</code>, pero puedes customizar o agregar más casos según la
+            estructura del mensaje de error que esperas recibir.
+            <br />
+            Por defecto son manejados los
             siguientes códigos de estado:
           </p>
           <v-timeline align="start" side="end">
@@ -186,7 +188,7 @@ const statusCodes = shallowRef([
           />
           <p>
             Como estándar para esta plantilla, se recomienda utilizar AxiosCommon
-            (<code>src/axiosCommon.js</code>) como encargado de llamar a está instancia de Axios y
+            (<code>src/utils/http/axios-common.js</code>) como encargado de llamar a está instancia de Axios y
             manejar las respuestas y errores. Utiliza AxiosCommon en los services de tu aplicación.
             Puedes ver más sobre como realizar peticiones HTTP en la sección
             <router-link :to="{ name: 'services-http' }">Services</router-link>.

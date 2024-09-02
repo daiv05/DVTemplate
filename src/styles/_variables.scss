@@ -95,7 +95,11 @@ $new-typography: (
 );
 
 @use 'vuetify/settings' with (
-  $typography: $new-typography
+  $typography: $new-typography,
+  // Puedes cambiarlo a false si no quieres usar el color pack de Vuetify
+  // Colores: https://vuetifyjs.com/en/styles/colors/#material-colors
+  // Leer más: https://vuetifyjs.com/en/styles/colors/#sass-color-pack
+  $color-pack: true
 );
 
 html,
@@ -103,13 +107,6 @@ body,
 #app {
   font-family: $body-font-family, sans-serif !important;
 }
-
-$btn-font-weight: 400 !default;
-$btn-letter-spacing: 0 !default;
-
-// Custom Variables
-// colors
-$white: #fff !default;
 
 // Global Shadow
 $box-shadow: 1px 0 20px rgb(0 0 0 / 8%);

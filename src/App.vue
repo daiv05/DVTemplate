@@ -1,8 +1,7 @@
 <template>
   <v-theme-provider :theme>
     <v-app>
-      <notifications position="top center" :max="3" />
-      <notifications position="bottom left" group="info-dv" :max="3" />
+      <notifications position="top center" :max="3" pauseOnHover />
       <AppLoader v-if="isLoading" />
       <RouterView />
     </v-app>

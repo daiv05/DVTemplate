@@ -64,15 +64,11 @@ router.beforeEach(async (to) => {
 })
 
 router.onError((error) => {
-  try {
-    if (error.message.includes('Failed to fetch dinamically imported module')) {
-      console.warn('Failed dynamic import, reloading...')
-      window.location.reload()
-    }
-  } catch (e) {
-    console.error(e, 'errorHandler Catch')
+  console.error(error, 'errorHandler')
+  if (error.message.includes('Failed to fetch dinamically imported module')) {
+    console.warn('Failed dynamic import, reloading...')
+    window.location.reload()
   }
-
 })
 
 export default router

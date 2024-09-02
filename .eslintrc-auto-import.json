@@ -92,6 +92,7 @@
     "IconMdiToyBrickPlus": true,
     "IconMdiPaletteAdvanced": true,
     "IconMdiPaletteOutline": true,
-    "IconMdiPaletteSwatchOutline": true
+    "IconMdiPaletteSwatchOutline": true,
+    "iconWidth": true
   }
 }

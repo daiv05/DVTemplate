@@ -69,7 +69,7 @@ label {
   height: 40px;
   position: relative;
   display: block;
-  background: rgb(255, 227, 125);
+  background: rgb(236, 236, 236);
   border-radius: 40px;
   box-shadow:
     inset 0px 5px 15px rgba(94, 94, 94, 0.4),
@@ -85,7 +85,7 @@ label:after {
   position: absolute;
   top: 2px;
   left: 2px;
-  background: linear-gradient(180deg, #ffe35a, #ffeb0a);
+  background: linear-gradient(180deg, #fffef6, #ffffff);
   border-radius: 36px;
   box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
   transition: 0.3s;
@@ -133,7 +133,7 @@ label svg {
 
 label svg.sun {
   left: 8px;
-  fill: #fff;
+  fill: #7e7e7e;
   transition: 0.3s;
 }
 
