@@ -9,7 +9,7 @@ const getSVG = (iconRequest) => {
       throw new Error(`Icon "${iconRequest.name}" is missing`)
     }
     const renderData = iconToSVG(iconData, {
-      height: iconRequest.size,
+      height: iconRequest.size
     })
     const svg = iconToHTML(replaceIDs(renderData.body), renderData.attributes)
     return svg

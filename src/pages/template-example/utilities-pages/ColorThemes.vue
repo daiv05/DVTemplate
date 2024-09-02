@@ -55,7 +55,12 @@ const cssProps = computed(() => {
 <template>
   <div>
     <div :style="cssProps">
-      <notifications classes="color-themes-notification" position="top center" group="colors-copy" :max="1" />
+      <notifications
+        classes="color-themes-notification"
+        position="top center"
+        group="colors-copy"
+        :max="1"
+      />
     </div>
     <AppBreadcrumb :title="page.title" :breadcrumbs="breadcrumbs"></AppBreadcrumb>
     <v-row>
@@ -89,6 +94,7 @@ const cssProps = computed(() => {
               <v-row class="d-flex justify-center flex-wrap ga-1">
                 <v-col v-for="(color, i) in lightColorsArrays" :key="i" cols="12" md="3">
                   <v-card
+                    v-longpress="{ fn: longCopyColor, data: [color] }"
                     class="my-4 mx-auto rounded-lg text-center d-flex align-center"
                     elevation="0"
                     :color
@@ -96,7 +102,6 @@ const cssProps = computed(() => {
                     max-width="300"
                     height="100"
                     @click.prevent="copyColor(color, i)"
-                    v-longpress="{ fn: longCopyColor, data: [color] }"
                   >
                     <v-card-text class="pt-4">
                       <span class="text-body-2 font-weight-bold">{{ i }}</span>
@@ -109,6 +114,7 @@ const cssProps = computed(() => {
               <v-row class="d-flex justify-center flex-wrap ga-1">
                 <v-col v-for="(color, i) in darkColorsArrays" :key="i" cols="12" md="3">
                   <v-card
+                    v-longpress="{ fn: longCopyColor, data: [color] }"
                     class="my-4 mx-auto rounded-lg text-center d-flex align-center"
                     elevation="0"
                     :color
@@ -116,7 +122,6 @@ const cssProps = computed(() => {
                     max-width="300"
                     height="100"
                     @click="copyColor(color, i)"
-                    v-longpress="{ fn: longCopyColor, data: [color] }"
                   >
                     <v-card-text class="pt-4">
                       <span class="text-body-2 font-weight-bold">{{ i }}</span>

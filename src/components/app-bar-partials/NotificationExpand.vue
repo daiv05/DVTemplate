@@ -59,6 +59,7 @@ const notificationList = ref([
         <v-list class="py-0" lines="three">
           <v-list-item
             v-for="noti in notificationList"
+            :key="noti.id"
             :value="noti.id"
             color="secondary"
             class="no-spacer"
@@ -71,10 +72,15 @@ const notificationList = ref([
                 :color="noti.avatar.iconBgColor"
                 class="mr-3"
               >
-                <div v-html="getSVG({
-                  name: noti.avatar.iconName,
-                  size: 24
-                })" :style="{ marginTop: '4px', color: noti.avatar.iconColorHex }" />
+                <div
+                  :style="{ marginTop: '4px', color: noti.avatar.iconColorHex }"
+                  v-html="
+                    getSVG({
+                      name: noti.avatar.iconName,
+                      size: 24
+                    })
+                  "
+                />
               </v-avatar>
               <v-avatar v-else size="40" class="mr-3">
                 <img :src="`/example-img/${noti.avatar.imageSrc}`" width="40" alt="Maki" />

@@ -63,8 +63,7 @@ const statusCodes = shallowRef([
   {
     code: '418',
     title: "I'm a teapot",
-    description:
-      'El servidor se rehúsa a preparar café porque es una tetera',
+    description: 'El servidor se rehúsa a preparar café porque es una tetera',
     color: 'yellow-darken-1'
   },
   {
@@ -149,13 +148,12 @@ const statusCodes = shallowRef([
             </v-list-item>
           </v-list>
           <p>
-            Para las respuestas con error, se muestra una alerta temporal con un mensaje.
-            Por defecto se espera que la petición devuelva:
-            <code>error.response.data.message</code>, pero puedes customizar o agregar más casos según la
-            estructura del mensaje de error que esperas recibir.
+            Para las respuestas con error, se muestra una alerta temporal con un mensaje. Por
+            defecto se espera que la petición devuelva:
+            <code>error.response.data.message</code>, pero puedes customizar o agregar más casos
+            según la estructura del mensaje de error que esperas recibir.
             <br />
-            Por defecto son manejados los
-            siguientes códigos de estado:
+            Por defecto son manejados los siguientes códigos de estado:
           </p>
           <v-timeline align="start" side="end">
             <v-timeline-item
@@ -188,9 +186,9 @@ const statusCodes = shallowRef([
           />
           <p>
             Como estándar para esta plantilla, se recomienda utilizar AxiosCommon
-            (<code>src/utils/http/axios-common.js</code>) como encargado de llamar a está instancia de Axios y
-            manejar las respuestas y errores. Utiliza AxiosCommon en los services de tu aplicación.
-            Puedes ver más sobre como realizar peticiones HTTP en la sección
+            (<code>src/utils/http/axios-common.js</code>) como encargado de llamar a está instancia
+            de Axios y manejar las respuestas y errores. Utiliza AxiosCommon en los services de tu
+            aplicación. Puedes ver más sobre como realizar peticiones HTTP en la sección
             <router-link :to="{ name: 'services-http' }">Services</router-link>.
           </p>
           <highlightjs :code="axiosHttp" language="javascript" :autodetect="false"></highlightjs>

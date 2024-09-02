@@ -22,6 +22,4 @@ app.config.errorHandler = (err, instance, info) => {
 registerPlugins(app)
 registerDirectives(app)
 
-
-
 app.mount('#app')

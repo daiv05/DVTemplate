@@ -12,7 +12,7 @@ const { toggleDrawer, toggleMiniSidebar } = useAppStore()
     class="blured-bar"
   >
     <v-hover>
-      <template #default="{ isHovering, props: propsHover }">
+      <template #default="{ props: propsHover }">
         <v-btn
           title="Toggle Mini Sidebar"
           class="hidden-md-and-down text-secondary"
@@ -28,7 +28,7 @@ const { toggleDrawer, toggleMiniSidebar } = useAppStore()
       </template>
     </v-hover>
     <v-hover>
-      <template #default="{ isHovering, props: propsHover }">
+      <template #default="{ props: propsHover }">
         <v-btn
           title="Toggle Sidebar"
           class="hidden-lg-and-up text-secondary ms-3"
@@ -47,7 +47,7 @@ const { toggleDrawer, toggleMiniSidebar } = useAppStore()
     <v-menu :close-on-content-click="false">
       <template #activator="{ props }">
         <v-hover>
-          <template #default="{ isHovering, props: propsHover }">
+          <template #default="{ props: propsHover }">
             <v-btn
               icon
               class="text-secondary ml-3"
