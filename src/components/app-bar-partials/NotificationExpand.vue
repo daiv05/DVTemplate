@@ -45,7 +45,9 @@ const notificationList = ref([
           <v-chip color="warning" variant="flat" size="small" class="ml-2 text-white">01</v-chip>
         </h6>
         <a href="#" class="text-decoration-underline text-primary text-subtitle-2">
-          <icon-mdi-checkbox-marked-circle-plus-outline style="font-size: 20; color: #1e1e1e" />
+          <icon-mdi-checkbox-marked-circle-plus-outline
+            style="font-size: 20; color: var(--v-theme-lightprimary)"
+          />
         </a>
       </div>
     </div>
@@ -72,14 +74,7 @@ const notificationList = ref([
                 :color="noti.avatar.iconBgColor"
                 class="mr-3"
               >
-                <div
-                  :style="{ marginTop: '4px', color: noti.avatar.iconColorHex }"
-                  v-html="
-                    getSVG({
-                      name: noti.avatar.iconName,
-                      size: 24
-                    })
-                  "
+                <BaseIcon :icon="noti.avatar.iconName" :color="noti.avatar.iconColorHex" :size="24"
                 />
               </v-avatar>
               <v-avatar v-else size="40" class="mr-3">

@@ -1,21 +1,25 @@
 import { icons } from '@iconify-json/mdi'
-import { getIconData, iconToSVG, iconToHTML, replaceIDs } from '@iconify/utils'
+import {
+  getIconData,
+  iconToSVG,
+  iconToHTML,
+  replaceIDs
+} from '@iconify/utils'
 
 const getSVG = (iconRequest) => {
-  console.log('iconRequest', iconRequest)
   try {
+    console.log('icons', icons)
     const iconData = getIconData(icons, iconRequest.name)
     if (!iconData) {
-      throw new Error(`Icon "${iconRequest.name}" is missing`)
+      throw new Error(`El icono "${iconRequest.name}" no existe`)
     }
-    const renderData = iconToSVG(iconData, {
+    const { attributes, body } = iconToSVG(iconData, {
       height: iconRequest.size
     })
-    const svg = iconToHTML(replaceIDs(renderData.body), renderData.attributes)
-    return svg
+    return iconToHTML(replaceIDs(body), attributes)
   } catch (err) {
     console.error(err, 'error icons-mdi')
-    return null
+    return ''
   }
 }
 

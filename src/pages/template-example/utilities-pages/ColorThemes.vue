@@ -59,7 +59,7 @@ const cssProps = computed(() => {
         classes="color-themes-notification"
         position="top center"
         group="colors-copy"
-        :max="1"
+        :max="3"
       />
     </div>
     <AppBreadcrumb :title="page.title" :breadcrumbs="breadcrumbs"></AppBreadcrumb>
