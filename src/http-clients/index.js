@@ -21,7 +21,7 @@ export default async function httpClient(
   params = {},
   data = {},
   headers = {},
-  responseType = HttpResponseTypes.json,
+  responseType = HttpResponseTypes.JSON,
   baseURL = '',
   client = 'axios'
 ) {
@@ -52,7 +52,7 @@ export default async function httpClient(
       return
     }
   } else {
-    headers['Content-Type'] = HttpContentTypes.applicationJson
+    headers['Content-Type'] = HttpContentTypes.APPLICATION_JSON
   }
 
   if (typeof endpoint !== 'string') {

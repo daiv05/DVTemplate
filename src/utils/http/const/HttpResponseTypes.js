@@ -1,10 +1,10 @@
 const HttpResponseTypes = {
-  json: 'json',
-  text: 'text',
-  blob: 'blob',
-  arrayBuffer: 'arrayBuffer',
-  document: 'document',
-  stream: 'stream'
+  JSON: 'json',
+  TEXT: 'text',
+  BLOB: 'blob',
+  ARRAY_BUFFER: 'arrayBuffer',
+  DOCUMENT: 'document',
+  STREAM: 'stream'
 }
 
 export default HttpResponseTypes
