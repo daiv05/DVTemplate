@@ -59,7 +59,7 @@ const cssProps = computed(() => {
         classes="color-themes-notification"
         position="top center"
         group="colors-copy"
-        :max="3"
+        :max="1"
       />
     </div>
     <AppBreadcrumb :title="page.title" :breadcrumbs="breadcrumbs"></AppBreadcrumb>
@@ -146,6 +146,6 @@ const cssProps = computed(() => {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   // Para mostrar colores dinámicos
   background: #ffffff;
-  border-left: var(--border-left-notification);
+  border-left: '20px solid ' + v-bind(colorNotification);
 }
 </style>

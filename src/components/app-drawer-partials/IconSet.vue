@@ -13,9 +13,9 @@ const props = defineProps({
 
 <template>
   <template v-if="props.level > 0">
-    <component :is="props.item" style="font-size: 4"></component>
+    <component :is="props.item" style="font-size: 4px"></component>
   </template>
   <template v-else>
-    <component :is="props.item" style="font-size: 18"></component>
+    <component :is="props.item" style="font-size: 18px"></component>
   </template>
 </template>

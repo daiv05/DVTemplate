@@ -23,7 +23,7 @@ const { toggleDrawer, toggleMiniSidebar } = useAppStore()
           size="small"
           @click.stop="toggleMiniSidebar"
         >
-          <icon-mdi-menu style="font-size: 19" />
+          <icon-mdi-menu style="font-size: 19px" />
         </v-btn>
       </template>
     </v-hover>
@@ -39,7 +39,7 @@ const { toggleDrawer, toggleMiniSidebar } = useAppStore()
           size="small"
           @click.stop="toggleDrawer"
         >
-          <icon-mdi-menu style="font-size: 19" />
+          <icon-mdi-menu style="font-size: 19px" />
         </v-btn>
       </template>
     </v-hover>
@@ -56,7 +56,7 @@ const { toggleDrawer, toggleMiniSidebar } = useAppStore()
               size="small"
               variant="flat"
             >
-              <icon-mdi-bell-alert-outline style="font-size: 19" />
+              <icon-mdi-bell-alert-outline style="font-size: 19px" />
             </v-btn>
           </template>
         </v-hover>
@@ -81,7 +81,7 @@ const { toggleDrawer, toggleMiniSidebar } = useAppStore()
           <span class="text-h6 mr-2 text-secondary font-weight-bold"
             >Daiv <span class="font-weight-light">DV</span></span
           >
-          <icon-mdi-chevron-down style="font-size: 19" />
+          <icon-mdi-chevron-down style="font-size: 19px" />
         </v-btn>
       </template>
       <v-sheet rounded="lg" width="330" elevation="12">

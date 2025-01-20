@@ -27,9 +27,6 @@ _axios.interceptors.response.use(
     const { token, refreshToken, setAuthData } = useAuthStore()
     const { response, request, message } = error
     if (response) {
-      console.error(response.data)
-      // console.error(response.status);
-      // console.error(response.headers);
       if (response.status >= 500) {
         alertToast({
           type: 'error',
@@ -77,13 +74,11 @@ _axios.interceptors.response.use(
         })
       }
     } else if (request) {
-      console.error(request)
       alertToast({
         type: 'error',
         text: 'Tiempo de espera agotado, por favor intenta más tarde'
       })
     } else {
-      console.error(message)
       alertToast({
         type: 'error',
         text: 'Ups! Ocurrió un error inesperado, por favor intenta más tarde'

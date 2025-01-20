@@ -32,6 +32,18 @@ const router = createRouter({
           component: () => import('../pages/NotFound.vue')
         }
       ]
+    },
+    {
+      path: '/m',
+      name: 'main',
+      component: () => import('../layouts/MainLayout.vue'),
+      children: [
+        {
+          path: '/index-view',
+          name: 'indexView',
+          component: () => import('../pages/IndexView.vue')
+        }
+      ]
     }
   ],
   async scrollBehavior(to, from, savedPosition) {
@@ -64,7 +76,7 @@ router.beforeEach(async (to) => {
 })
 
 router.onError((error) => {
-  console.error(error, 'errorHandler')
+  console.error(error, 'errorHandler router.js')
   if (error.message.includes('Failed to fetch dinamically imported module')) {
     console.warn('Failed dynamic import, reloading...')
     window.location.reload()

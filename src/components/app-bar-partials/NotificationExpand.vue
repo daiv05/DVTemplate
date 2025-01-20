@@ -1,7 +1,5 @@
 <script setup>
 import { OverlayScrollbarsComponent } from 'overlayscrollbars-vue'
-import { getSVG } from '@/utils/iconify/icons-mdi'
-
 const notificationList = ref([
   {
     id: 1,
@@ -23,7 +21,7 @@ const notificationList = ref([
     name: 'Verificación éxitosa',
     avatar: {
       icon: true,
-      iconName: 'tag-search-outline',
+      iconName: IconMdiTagSearchOutline,
       iconColorHex: '#ffffff',
       iconBgColor: 'success',
       imageSrc: ''
@@ -45,9 +43,7 @@ const notificationList = ref([
           <v-chip color="warning" variant="flat" size="small" class="ml-2 text-white">01</v-chip>
         </h6>
         <a href="#" class="text-decoration-underline text-primary text-subtitle-2">
-          <icon-mdi-checkbox-marked-circle-plus-outline
-            style="font-size: 20; color: var(--v-theme-lightprimary)"
-          />
+          <icon-mdi-checkbox-marked-circle-plus-outline style="font-size: 20px; color: #1e1e1e" />
         </a>
       </div>
     </div>
@@ -74,8 +70,7 @@ const notificationList = ref([
                 :color="noti.avatar.iconBgColor"
                 class="mr-3"
               >
-                <BaseIcon :icon="noti.avatar.iconName" :color="noti.avatar.iconColorHex" :size="24"
-                />
+                <component :is="noti.avatar.iconName" size="24" color="white" />
               </v-avatar>
               <v-avatar v-else size="40" class="mr-3">
                 <img :src="`/example-img/${noti.avatar.imageSrc}`" width="40" alt="Maki" />

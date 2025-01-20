@@ -16,15 +16,15 @@ import { storeToRefs } from 'pinia'
 const { isLoading, darkMode } = storeToRefs(useAppStore())
 const theme = ref('')
 
-onMounted(() => {
-  toggleTheme()
-})
-
-watch(darkMode, () => {
-  toggleTheme()
-})
-
 const toggleTheme = async () => {
   darkMode.value ? (theme.value = 'DVDarkTheme') : (theme.value = 'DVLightTheme')
 }
+
+watch(
+  darkMode,
+  () => {
+    toggleTheme()
+  },
+  { immediate: true }
+)
 </script>

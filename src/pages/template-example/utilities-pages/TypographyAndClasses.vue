@@ -79,7 +79,7 @@ const headings = shallowRef([
           <v-list lines>
             <v-list-item>
               <template #prepend>
-                <IconMdiVariable style="font-size: 20" class="mr-4" />
+                <IconMdiVariable style="font-size: 20px" class="mr-4" />
               </template>
               <v-list-item-title>Variables</v-list-item-title>
               <v-list-item-subtitle
@@ -89,7 +89,7 @@ const headings = shallowRef([
             </v-list-item>
             <v-list-item>
               <template #prepend>
-                <IconMdiToyBrickOutline style="font-size: 20" class="mr-4" />
+                <IconMdiToyBrickOutline style="font-size: 20px" class="mr-4" />
               </template>
               <v-list-item-title>Instalación</v-list-item-title>
               <v-list-item-subtitle

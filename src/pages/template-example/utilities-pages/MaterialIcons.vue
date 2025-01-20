@@ -26,14 +26,14 @@ const codeIcons = ref(
 <template>
   <!-- El tamaño y color de los iconos se pueden modificar
   con el atributo style -->
-	<IconMdiAlertCircle style="font-size: 20; color: black" />
+	<IconMdiAlertCircle style="font-size: 20px; color: black" />
   <!-- Con la clase text-[color] tambien puedes modificar el color,
   es heredado si el componente padre lo posee -->
   <div class="text-black">
-    <IconMdiAlertCircle style="font-size: 20" />
+    <IconMdiAlertCircle style="font-size: 20px" />
   </div>
   <!-- Puedes escribir también las etiquetas como: -->
-	<icon-mdi-alert-circle style="font-size: 20; color: black" />
+	<icon-mdi-alert-circle style="font-size: 20px; color: black" />
 </template>
 `
 )
@@ -47,7 +47,7 @@ const codeIconsComponent = ref(
 <\/script>
 
 <template>
-  <component :is="iconObjectExample.icon" style="font-size: 18" />
+  <component :is="iconObjectExample.icon" style="font-size: 18px" />
 </template>
 `
 )

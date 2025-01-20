@@ -5,7 +5,7 @@
         <v-card elevation="1" rounded="md" class="mx-auto">
           <v-card-title class="text-center my-8" theme="DVThemeLigth">
             <h3 class="text-h1">404 Not Found</h3>
-            <icon-mdi-image-broken class="gradient-svg" style="font-size: 200" />
+            <icon-mdi-image-broken class="gradient-svg" style="font-size: 200px" />
           </v-card-title>
           <v-card-text class="d-flex flex-column justify-center text-center">
             <p class="text-subtitle-1 font-weight-bold">LA PÁGINA QUE ESTÁS BUSCANDO NO EXISTE</p>

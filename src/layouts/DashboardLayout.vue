@@ -9,31 +9,10 @@
             <Transition name="slide-fade" mode="out-in">
               <KeepAlive>
                 <div>
-                  <v-card
+                  <the-app-error-card
                     v-if="errorCaptured.length > 0"
-                    color="red-darken-2"
-                    variant="outlined"
-                    class="mx-auto my-8"
-                    subtitle="DVTemplate"
-                    max-width="500"
-                  >
-                    <template #prepend>
-                      <icon-mdi-image-broken-variant style="font-size: 25" />
-                    </template>
-                    <template #title>
-                      <span class="font-weight-black">Ha ocurrido un error</span>
-                    </template>
-                    <v-card-text class="bg-red-darken-2 pt-4">
-                      <div v-for="(e, i) in errorCaptured" :key="i">
-                        <div class="text-h6 font-weight-bold">- {{ e.error }}</div>
-                      </div>
-                    </v-card-text>
-                    <template #actions>
-                      <span class="text-subtitle-2"
-                        >Por favor recargue la página o intente de nuevo más tarde</span
-                      >
-                    </template>
-                  </v-card>
+                    :error-captured="errorCaptured"
+                  />
                   <Suspense v-else>
                     <!-- main content -->
                     <component :is="Component"></component>
@@ -57,21 +36,14 @@
 import { useAppStore } from '@/stores/app'
 import { storeToRefs } from 'pinia'
 import { onErrorCaptured } from 'vue'
-
 const { miniSidebar } = storeToRefs(useAppStore())
-
 const errorCaptured = ref([])
-
-try {
-  onErrorCaptured((error, ins, info) => {
-    errorCaptured.value.push({
-      error
-    })
-    return true
+onErrorCaptured((error, ins, info) => {
+  errorCaptured.value.push({
+    error
   })
-} catch (e) {
-  console.error(e, 'error')
-}
+  return true
+})
 </script>
 
 <style scoped lang="scss">

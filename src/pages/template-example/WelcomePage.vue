@@ -22,19 +22,19 @@
           <v-card-text>
             <v-list variant="flat" density="compact" lines>
               <v-list-item>
-                <icon-mdi-circle style="font-size: 4" />
+                <icon-mdi-circle style="font-size: 4px" />
                 <strong class="ml-2">Vue.js:</strong> 3.4.33
               </v-list-item>
               <v-list-item>
-                <icon-mdi-circle style="font-size: 4" />
+                <icon-mdi-circle style="font-size: 4px" />
                 <strong class="ml-2">Vuetify:</strong> 3.6.0
               </v-list-item>
               <v-list-item>
-                <icon-mdi-circle style="font-size: 4" />
+                <icon-mdi-circle style="font-size: 4px" />
                 <strong class="ml-2">Vue Router:</strong> 4.4.0
               </v-list-item>
               <v-list-item>
-                <icon-mdi-circle style="font-size: 4" />
+                <icon-mdi-circle style="font-size: 4px" />
                 <strong class="ml-2">Vite:</strong> 5.3.4
               </v-list-item>
             </v-list>

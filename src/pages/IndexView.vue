@@ -1,5 +1,6 @@
 <template>
   <div>
+    <span>fefefsdf</span>
     <span>CAAAATTTTSSSSS<br /><br /></span>
     <span v-for="(dat, i) in cats" :key="i">- {{ dat.text }} <br /><br /></span>
     <span>ANIMAAAAALLSSSS<br /><br /></span>
@@ -11,6 +12,7 @@
 const cats = ref([])
 const animals = ref([])
 const alertToast = inject('alertToast')
+
 const loadCats = async () => {
   const { data, error } = await catServices.getCatAllData()
   if (data) {
@@ -24,8 +26,9 @@ const loadCats = async () => {
     console.error('Error: ', error)
   }
 }
+
 const loadAnimals = async () => {
-  const { data, error } = await catServices.getAnimals()
+  const { data, error } = await catServices.getAnimals({ type: 'dog' })
   if (data) {
     animals.value = data
     alertToast({
@@ -38,5 +41,5 @@ const loadAnimals = async () => {
   }
 }
 
-await Promise.all([loadCats(), loadAnimals()])
+await Promise.all([await loadAnimals()])
 </script>

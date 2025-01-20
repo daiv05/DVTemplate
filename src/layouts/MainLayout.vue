@@ -1,13 +1,14 @@
 <template>
   <v-app>
     <v-main>
-      <router-view />
+      <Suspense>
+        <RouterView />
+        <template #fallback>
+          <AppLoader />
+        </template>
+      </Suspense>
     </v-main>
-
-    <AppFooter />
   </v-app>
 </template>
 
-<script setup>
-//
-</script>
+<script setup></script>
