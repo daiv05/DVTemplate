@@ -4,8 +4,11 @@ const { notify } = useNotification()
 
 const alertToast = (config) => {
   notify({
-    ...config
+    ...config,
+    ignoreDuplicates: true
   })
 }
 
-export default alertToast
+export default {
+  alertToast
+}

@@ -39,7 +39,7 @@ const longCopyColor = (colorHex) => {
   navigator.clipboard.writeText(colorHex)
   colorNotification.value = colorHex
   alertToast({
-    title: 'HEX copiado!',
+    title: 'VALOR copiado!',
     text: colorHex,
     group: 'colors-copy'
   })
@@ -60,6 +60,7 @@ const cssProps = computed(() => {
         position="top center"
         group="colors-copy"
         :max="1"
+        :duration="2000"
       />
     </div>
     <AppBreadcrumb :title="page.title" :breadcrumbs="breadcrumbs"></AppBreadcrumb>
@@ -146,6 +147,6 @@ const cssProps = computed(() => {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   // Para mostrar colores dinámicos
   background: #ffffff;
-  border-left: '20px solid ' + v-bind(colorNotification);
+  border-left: var(--border-left-notification);
 }
 </style>

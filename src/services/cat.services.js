@@ -1,4 +1,4 @@
-import httpClient from '@/http-client/index'
+import httpClient from '@/http-clients/index'
 import HttpRequestMethods from '@/utils/http/const/HttpRequestMethods'
 
 const getCatAllData = async () =>

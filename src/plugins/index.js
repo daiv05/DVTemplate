@@ -8,7 +8,7 @@
 import vuetify from './vuetify'
 import pinia from '@/stores'
 import router from '@/router'
-import alertToast from '@/plugins/notification'
+import notifications from '@/plugins/notification'
 import axios from '@/plugins/axios'
 import Notifications from '@kyvg/vue3-notification'
 import 'highlight.js/scss/atom-one-dark.scss'
@@ -24,6 +24,5 @@ export function registerPlugins(app) {
     .use(pinia)
     .use(Notifications)
     .use(hljsVuePlugin)
-    .provide('alertToast', alertToast)
-    .provide('axiosCommon', axios)
+    .provide('alertToast', notifications.alertToast)
 }
