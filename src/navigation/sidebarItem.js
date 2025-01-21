@@ -15,6 +15,23 @@ const sidebarItem = [
     to: '/inicio'
   },
   { divider: true },
+  { header: 'Antes de empezar' },
+  {
+    title: 'Recomendaciones',
+    icon: IconMdiHeadLightbulbOutline,
+    to: '/recomendaciones'
+  },
+  {
+    title: 'Extensiones',
+    icon: IconMdiPuzzleOutline,
+    to: '/extensiones-editor'
+  },
+  {
+    title: 'Estándares',
+    icon: IconMdiMapMarkerDistance,
+    to: '/estandares'
+  },
+  { divider: true },
   { header: 'Páginas' },
   {
     title: 'Autenticación',

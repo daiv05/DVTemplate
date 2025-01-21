@@ -1,7 +1,7 @@
 import HttpRequestMethods from '@/utils/http/const/HttpRequestMethods'
 import HttpResponseTypes from '@/utils/http/const/HttpResponseTypes'
 import HttpContentTypes from '@/utils/http/const/HttpContentTypes'
-import AxiosClient from '@/http-client/clients/AxiosClient'
+import AxiosClient from '@/http-clients/AxiosClient'
 
 /**
  * @description Función global para realizar peticiones HTTP con el cliente seleccionado
