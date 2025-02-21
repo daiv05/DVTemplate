@@ -26,18 +26,14 @@ _axios.interceptors.response.use(
   async (error) => {
     const { token, refreshToken, setAuthData } = useAuthStore()
     const { response, request, message } = error
+    let alertErrorText = ':('
     if (response) {
       if (response.status >= 500) {
-        alertToast({
-          type: 'error',
-          text: response.data.message || 'Error en el servidor, por favor intenta más tarde'
-        })
+        alertErrorText =
+          response.data.message || 'Error en el servidor, por favor intenta más tarde'
       }
       if (response.status === 400) {
-        alertToast({
-          type: 'error',
-          text: response.data.message || 'Error en la petición, por favor revisa los datos'
-        })
+        alertErrorText = response.data.message || 'Error en la petición, por favor revisa los datos'
       }
       if (response.status === 401) {
         try {
@@ -60,30 +56,23 @@ _axios.interceptors.response.use(
           }
         } catch (error) {
           router.push('/login')
-          alertToast({
-            type: 'error',
-            text: 'Sesión expirada, por favor inicie sesión nuevamente'
-          })
+          alertErrorText = 'Sesión expirada, por favor inicie sesión nuevamente'
         }
       }
       if (response.status === 403) {
         router.push('/')
-        alertToast({
-          type: 'error',
-          text: response.data.message || 'No tienes permisos para realizar esta acción'
-        })
+        alertErrorText = response.data.message || 'No tienes permisos para realizar esta acción'
       }
     } else if (request) {
-      alertToast({
-        type: 'error',
-        text: 'Tiempo de espera agotado, por favor intenta más tarde'
-      })
+      alertErrorText = 'No se pudo conectar al servidor, por favor intenta más tarde'
     } else {
-      alertToast({
-        type: 'error',
-        text: 'Ups! Ocurrió un error inesperado, por favor intenta más tarde'
-      })
+      alertErrorText = 'Ocurrió un error inesperado, por favor intenta más tarde'
     }
+
+    alertToast({
+      type: 'error',
+      text: alertErrorText
+    })
 
     return Promise.reject(error)
   }

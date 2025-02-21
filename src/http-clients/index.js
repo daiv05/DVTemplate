@@ -25,17 +25,6 @@ export default async function httpClient(
   baseURL = '',
   client = 'axios'
 ) {
-  console.log(
-    'httpClient',
-    requestMethod,
-    endpoint,
-    params,
-    data,
-    headers,
-    responseType,
-    baseURL,
-    client,
-  )
   if (!Object.values(HttpRequestMethods).includes(requestMethod)) {
     console.error('Request-Method no válido (httpClient)')
     return
