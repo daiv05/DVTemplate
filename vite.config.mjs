@@ -17,7 +17,7 @@ export default defineConfig({
       template: {
         transformAssetUrls
         // compilerOptions: {
-        //   // treat all tags with a dash as custom elements
+        //   //treat all tags with a dash as custom elements
         //   isCustomElement: (tag) => tag.startsWith("notifications"),
         // },
       }
@@ -38,12 +38,10 @@ export default defineConfig({
     Unfonts({
       fontsource: {
         families: [
-          'Montserrat Variable',
           {
-            name: 'Montserrat',
+            name: 'Montserrat Variable',
             variable: {
               wght: true,
-              ital: true
             },
             subset: 'latin'
           }
