@@ -13,7 +13,7 @@
                     v-if="errorCaptured.length > 0"
                     :error-captured="errorCaptured"
                   />
-                  <Suspense v-else>
+                  <Suspense v-else timeout="0">
                     <!-- main content -->
                     <component :is="Component"></component>
                     <!-- loading state -->
